@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:id="@+id/nei_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="内部存储空间 ："
+        android:layout_margin="5dp" />
+
+    <TextView
+        android:id="@+id/wai_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="外部存储空间  : "
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="写文件到sd卡"
+        android:layout_margin="5dp" />
+    <Button
+        android:id="@+id/btn_del_sd_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除文件"
+        android:layout_margin="5dp"/>
+
+</LinearLayout>

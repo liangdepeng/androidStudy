@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".weatherdemo.MyWeatherActivity">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/weather_btn"
+                android:text="确定"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ScrollView
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="233"
+                    android:layout_margin="3dp"
+                    android:id="@+id/text_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+        </LinearLayout>
+
+        <fragment
+            android:name="ldp.example.com.android_demo.weatherdemo.CityFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/TODO" />
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+
+</LinearLayout>

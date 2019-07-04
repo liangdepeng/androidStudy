@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ldp.example.com.android_demo">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".studydemo.callphone.CallphoneActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".studydemo.sendmessage.SendMessageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studydemo.zidingyikj.circle"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studydemo.qqlogin.QQLogin_Activity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studydemo.utils.BaseActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studydemo.wrisesdfile.WriteSDfileActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studydemo.wrisesdfile.WriteActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".studydemo.xml_.XmlActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity android:name=".studydemo.wrisesdfile.SharedPreferenceActivity" />
+        <activity android:name=".studydemo.json.JsonActivity" />
+        <activity android:name=".studydemo.sqllitedemo.SqlActivity" />
+        <activity android:name=".studydemo.contentprovider.ContentProviderActivity" />
+        <activity
+            android:name=".studydemo.callphone.DialogActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".studydemo.dialog.DialogsActivity" />
+        <activity android:name=".studydemo.task.AsyncTaskActivity" />
+        <activity android:name=".studydemo.http.HttpActivity" />
+        <activity android:name=".studydemo.kotlin.KotlinVideoPlayerActivity" />
+        <activity android:name=".studydemo.kotlin.SystemVideoPlayerActivity" />
+        <activity android:name=".studydemo.kotlin.KotlinCodeDemoActivity1" />
+        <activity android:name=".weather.activity.WeatherWelcomeActivity" />
+        <activity android:name=".weather.activity.WeatherActivity" />
+        <activity android:name=".mvp.test1.TestMvpActivity" />
+        <activity android:name=".mvp.base.test.view.TestMvpAvtivity2" />
+        <activity android:name=".weatherdemo.WeatherSplashActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".weatherdemo.MyWeatherActivity" />
+        <activity android:name=".livedata.LiveDataTestActivity" />
+        <activity android:name=".livedata.FragmentTestActivity" />
+        <activity android:name=".studydemo.webview.WebViewActivity" />
+        <activity android:name=".studydemo.pic.ImageCaptureActivity" />
+        <activity android:name=".studydemo.notification.NotificationActivity" />
+        <activity android:name=".studydemo.webview.HandlerWelcomeActivity"></activity>
+        <activity android:name=".service.TestServiceActivity" />
+
+        <service
+            android:name=".service.TestService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".main.MainActivity2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".studydemo.json.GsonParseActivity"></activity>
+    </application>
+
+</manifest>

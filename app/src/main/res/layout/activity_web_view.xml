@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".studydemo.webview.WebViewActivity">
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/web_view_et"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/web_view_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="test"/>
+
+        <Button
+            android:id="@+id/getUrl"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="getUrl"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutShowWeb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp">
+    </FrameLayout>
+
+    <!--<WebView-->
+        <!--android:id="@+id/webView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="1dp">-->
+    <!--</WebView>-->
+
+</LinearLayout>

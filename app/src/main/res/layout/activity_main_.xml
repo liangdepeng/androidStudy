@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/call_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打电话"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/send_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发短信"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="模拟登陆"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/zdy_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义控件"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/cun_chu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="存储空间"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/btn_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文件"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/btn_xml_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="xml解析"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/btn_SharedPreferences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SharedPreferences"
+            android:textSize="15sp"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/bt_json"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Json"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/btn_sqlite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SQLite"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btn_content_provider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="内容提供者"/>
+
+        <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dialog"
+            android:textAllCaps="false"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btn_http"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="简单 http"
+            android:textAllCaps="false"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/btn_kotlin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="系统视频播放器(kotlin)"
+            android:textAllCaps="false"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/btn_weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="简易天气预报(kotlin)"
+            android:textAllCaps="false"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</ScrollView>
