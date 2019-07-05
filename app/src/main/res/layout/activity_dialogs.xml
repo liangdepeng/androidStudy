@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".studydemo.dialog.DialogsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".studydemo.dialog.DialogsActivity">
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/AlertDialog"
-        android:textAllCaps="false"
-        android:text="AlertDialog"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AlertDialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/ProgressDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ProgressDialog（点击切换样式）"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/list_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="list dialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/single_choose_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="single choice dialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/multi_choice_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="multi choice dialog"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ProgressDialog"
         android:textAllCaps="false"
-        android:text="ProgressDialog"/>
+        android:text="TimePicker（点击切换样式）"
+        android:id="@+id/timePickerDialog"/>
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import ldp.example.com.android_demo.livedata.FragmentTestActivity;
 import ldp.example.com.android_demo.livedata.LiveDataTestActivity;
 import ldp.example.com.android_demo.studydemo.callphone.CallphoneActivity;
 import ldp.example.com.android_demo.studydemo.contentprovider.ContentProviderActivity;
+import ldp.example.com.android_demo.studydemo.dialog.DialogsActivity;
 import ldp.example.com.android_demo.studydemo.http.HttpActivity;
 import ldp.example.com.android_demo.studydemo.json.JsonActivity;
 import ldp.example.com.android_demo.studydemo.kotlin.KotlinVideoPlayerActivity;
@@ -69,10 +70,10 @@ public enum ClassEnum {
     VIDEO_PLAYER("videoPlayer", KotlinVideoPlayerActivity.class, false),
 
     // liveData+viewModel(Activity)
-    LIVE_DATA_ONE("liveData+viewModel(Activity)",LiveDataTestActivity.class,false),
+    LIVE_DATA_ONE("liveData+viewModel(Activity)", LiveDataTestActivity.class, false),
 
     //liveData+viewModel(fragment共用ViewModel)
-    LIVE_DATA_TWO("liveData+viewModel(fragment共用ViewModel)",FragmentTestActivity.class,false),
+    LIVE_DATA_TWO("liveData+viewModel(fragment共用ViewModel)", FragmentTestActivity.class, false),
 
     // json数据解析
     JSON_DATA("json数据解析", JsonActivity.class, false),
@@ -84,7 +85,10 @@ public enum ClassEnum {
     CONTENT_PROVIDER("contentProvider", ContentProviderActivity.class, false),
 
     // 拨打电话
-    CALL_PHONE("拨打电话", CallphoneActivity.class, false);
+    CALL_PHONE("拨打电话", CallphoneActivity.class, false),
+
+    // 安卓原生弹窗
+    ANDROID_DIALOG("安卓原生弹窗", DialogsActivity.class, false);
 
     private String info;
     private Class clazz;

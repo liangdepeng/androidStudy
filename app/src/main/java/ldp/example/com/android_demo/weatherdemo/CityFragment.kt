@@ -56,15 +56,17 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
         return view
     }
 
+    private var isZhiXiaShi = false
+
     override fun initView() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = CityAdapter(context, cityList)
         (recyclerView.adapter as CityAdapter).setOnItemClickListener(object : CityAdapter.OnItemClickListener {
             override fun onItemClick(view: View?, position: Int, str: String?) {
 //                showShortToast(str)
-
                 parentId = cityList[position].parentid
                 cityId = cityList[position].cityid
+
                 var list = listOf<ResultBean>()
                 when {
                     parentId == 0 -> {
@@ -79,6 +81,7 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
                         addressLevel = 2
                         list = DataSupport.where("parentid = ?", cityId.toString()).find(ResultBean::class.java)
                         if (list.isEmpty()) {
+                            isZhiXiaShi = true
                             addressLevel = 3
                         } else {
                             cityList.clear()
@@ -97,7 +100,12 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
                         val activity = activity as MyWeatherActivity
                         activity.drawerLayout.closeDrawers()
                         activity.requestWeatherData(str!!)
-                        addressLevel = 2
+                        if (isZhiXiaShi) {
+                            addressLevel = 1
+                            isZhiXiaShi = false
+                        } else {
+                            addressLevel = 2
+                        }
                     } else {
                         startActivity(Intent(context, MyWeatherActivity::class.java).putExtra("city", str))
                     }
