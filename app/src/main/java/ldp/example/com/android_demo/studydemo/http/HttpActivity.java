@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Objects;
 
 import ldp.example.com.android_demo.R;
 
@@ -41,8 +42,6 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
         mWeather_btn.setOnClickListener(this);
         //mEt_http.setText("杭州");
         httpTest();
-
-
 
         // EditText 弹出键盘导致界面上移错乱，解决方法，最外层布局设置为 ScrollView
         // 或者 功能清单文件 activity设置 android:windowSoftInputMode=“adjustResize|stateHidden”

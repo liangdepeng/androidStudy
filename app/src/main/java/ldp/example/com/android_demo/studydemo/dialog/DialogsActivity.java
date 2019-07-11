@@ -1,13 +1,19 @@
 package ldp.example.com.android_demo.studydemo.dialog;
 
+import android.app.Application;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -28,16 +34,19 @@ public class DialogsActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialogs);
+        initView();
+    }
 
+    private void initView() {
         Button btnAlertDialog = (Button) findViewById(R.id.AlertDialog);
         Button btnProgressDialog = (Button) findViewById(R.id.ProgressDialog);
-        Button list_dialog = (Button) findViewById(R.id.list_dialog);
-        Button single_choose_dialog = (Button) findViewById(R.id.single_choose_dialog);
-        Button multi_choice_dialog = (Button) findViewById(R.id.multi_choice_dialog);
+        Button listDialog = (Button) findViewById(R.id.list_dialog);
+        Button singleChooseDialog = (Button) findViewById(R.id.single_choose_dialog);
+        Button multiChoiceDialog = (Button) findViewById(R.id.multi_choice_dialog);
         findViewById(R.id.timePickerDialog).setOnClickListener(this);
-        multi_choice_dialog.setOnClickListener(this);
-        single_choose_dialog.setOnClickListener(this);
-        list_dialog.setOnClickListener(this);
+        multiChoiceDialog.setOnClickListener(this);
+        singleChooseDialog.setOnClickListener(this);
+        listDialog.setOnClickListener(this);
         btnAlertDialog.setOnClickListener(this);
         btnProgressDialog.setOnClickListener(this);
     }
@@ -88,7 +97,9 @@ public class DialogsActivity extends AppCompatActivity implements View.OnClickLi
                 THEME_HOLO_LIGHT, // 旧版样式2
                 THEME_TRADITIONAL}; // 旧版样式3
 
-        if (i == 5) { i = 0; }
+        if (i == 5) {
+            i = 0;
+        }
 
         new TimePickerDialog(this, styles[i++], new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -209,6 +220,11 @@ public class DialogsActivity extends AppCompatActivity implements View.OnClickLi
         });
         alertDialog.show();
     }
+
+//    private void setDatePicker() {
+//        DatePickerDialog datePickerDialog = new DatePickerDialog(this);
+//        datePickerDialog.show();
+//    }
 
     /**
      * @param msg  提示信息

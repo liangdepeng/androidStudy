@@ -16,6 +16,7 @@ import ldp.example.com.android_demo.studydemo.sqllitedemo.SqlActivity;
 import ldp.example.com.android_demo.studydemo.task.AsyncTaskActivity;
 import ldp.example.com.android_demo.studydemo.webview.HandlerWelcomeActivity;
 import ldp.example.com.android_demo.studydemo.webview.WebViewActivity;
+import ldp.example.com.android_demo.studydemo.webview.androidH5Activity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.SharedPreferenceActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteSDfileActivity;
@@ -88,7 +89,9 @@ public enum ClassEnum {
     CALL_PHONE("拨打电话", CallphoneActivity.class, false),
 
     // 安卓原生弹窗
-    ANDROID_DIALOG("安卓原生弹窗", DialogsActivity.class, false);
+    ANDROID_DIALOG("安卓原生弹窗", DialogsActivity.class, false),
+
+    ANDROID_H5("安卓基本h5交互", androidH5Activity.class, false);
 
     private String info;
     private Class clazz;

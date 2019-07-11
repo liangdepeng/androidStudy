@@ -105,6 +105,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".studydemo.json.GsonParseActivity"></activity>
+        <activity android:name=".studydemo.webview.androidH5Activity"></activity>
     </application>
 
 </manifest>
