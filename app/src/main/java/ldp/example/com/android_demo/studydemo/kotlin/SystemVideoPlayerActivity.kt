@@ -12,6 +12,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_video_player.*
+import kotlinx.android.synthetic.main.activity_video_player.view.*
 import ldp.example.com.android_demo.R
 
 class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
@@ -24,7 +25,7 @@ class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
     var voiceMax: Int = 0
     var url: String? = null
     var heightUrl: String? = null
-    var list: ArrayList<TestBean.TrailersBean>? = null
+    lateinit var list: ArrayList<TestBean.TrailersBean>
     lateinit var audio_service: AudioManager
     var mediaController: MediaController? = null
     var videoWidth: Int = 0
@@ -75,7 +76,7 @@ class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
 //        url = intent.getStringExtra("video_url")
 //        heightUrl = intent.getStringExtra("video_heightUrl")
         list = intent?.getSerializableExtra("video_list") as ArrayList<TestBean.TrailersBean>
-        url = list!![currentPosition].url
+        url = list[currentPosition].url
         movieDataChangedPlay(currentPosition)
     }
 
@@ -107,9 +108,9 @@ class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.next_btn -> {
                 currentPosition++
-                if (currentPosition > list!!.size - 1) {
+                if (currentPosition > list.size - 1) {
                     showToast(getString(R.string.atLast))
-                    currentPosition = list!!.size - 1
+                    currentPosition = list.size - 1
                 } else {
                     movieDataChangedPlay(currentPosition)
                 }
@@ -129,14 +130,14 @@ class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun movieDataChangedPlay(currentPosition: Int) {
         url = if (spinner.selectedItemPosition == 0)
-            list!![currentPosition].url
+            list[currentPosition].url
         else
-            list!![currentPosition].hightUrl
+            list[currentPosition].hightUrl
 
         playVideo()
-        movie_name.text = list!![currentPosition].movieName
-        movie_summary.text = list!![currentPosition].summary
-        movie_type.text = list!![currentPosition].type.toString()
+        movie_name.text = list[currentPosition].movieName
+        movie_summary.text = list[currentPosition].summary
+        movie_type.text = list[currentPosition].type.toString()
 
     }
 
@@ -147,9 +148,9 @@ class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             if (position == 0) {
-                url = list!![currentPosition].url
+                url = list[currentPosition].url
             } else if (position == 1) {
-                url = list!![currentPosition].hightUrl
+                url = list[currentPosition].hightUrl
             }
             playVideo()
         }
@@ -242,7 +243,7 @@ class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
                         next_loading_layout.visibility = View.GONE
                         countDownTime = 5
                         currentPosition++
-                        if (currentPosition > list!!.size - 1) {
+                        if (currentPosition > list.size - 1) {
                             showToast(getString(R.string.atLast))
                         } else {
                             movieDataChangedPlay(currentPosition)

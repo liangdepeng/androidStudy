@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 
+/**
+ * @author Da Peng
+ */
 public abstract class MyBaseActivity extends AppCompatActivity implements MyBaseView {
 
     private ProgressDialog mProgressDialog;

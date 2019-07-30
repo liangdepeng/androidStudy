@@ -31,6 +31,7 @@ class androidH5Activity : AppCompatActivity() {
     }
 
 
+    @SuppressLint("AddJavascriptInterface")
     private fun initView() {
         webView = WebView(MyApplication.getAppContent())
         val webSettings = webView.settings
@@ -81,7 +82,7 @@ class androidH5Activity : AppCompatActivity() {
             TimePickerDialog(this@androidH5Activity,object : TimePickerDialog.OnTimeSetListener{
                 override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
                     showTips("$hourOfDay  $minute")
-//                    webView.loadUrl("javascript:test2("+ "$hourOfDay  $minute"+")")
+                    webView.loadUrl("javascript:test2("+ "$hourOfDay  $minute"+")")
                 }
             },0,0,true).show()
         }

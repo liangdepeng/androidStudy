@@ -63,7 +63,7 @@ public class SendMessageActivity extends BaseActivity {
                 performCodeWithPermission("发送短信权限", new PermissionCallback() {
                     @Override
                     public void hasPermission() {
-                        send_messages();
+                        sendMessages();
                     }
 
                     @Override
@@ -75,7 +75,7 @@ public class SendMessageActivity extends BaseActivity {
         }
     }
 
-    private void send_messages() {
+    private void sendMessages() {
         SmsManager smsManager = SmsManager.getDefault();
         smsManager.sendTextMessage(mPhone, null, mMessages, null, null);
     }

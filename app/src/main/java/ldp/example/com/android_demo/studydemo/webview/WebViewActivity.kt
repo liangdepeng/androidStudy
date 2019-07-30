@@ -79,14 +79,17 @@ class WebViewActivity : MyBaseActivity() {
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 view?.loadUrl(request.toString())
+                LogUtils.d("webViewClient","  --shouldOverrideUrlLoading--  ")
                 return true
             }
 
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                LogUtils.d("webViewClient","  --onPageStarted--  ")
                 showProgressDialog()
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
+                LogUtils.d("webViewClient","  --onPageFinished--  ")
                 hideProgressDialog()
             }
 

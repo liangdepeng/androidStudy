@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.Objects;
+
 import ldp.example.com.android_demo.R;
 
 
@@ -40,7 +42,7 @@ public class NotificationActivity extends AppCompatActivity {
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_login_1))
                         .setAutoCancel(true)
                         .build();
-                manager.notify(1, notification);
+                Objects.requireNonNull(manager).notify(1, notification);
             }
         });
 
@@ -57,7 +59,7 @@ public class NotificationActivity extends AppCompatActivity {
                         .setAutoCancel(true)
                         .setColor(Color.BLUE)
                         .build();
-                manager2.notify(2, notification2);
+                Objects.requireNonNull(manager2).notify(2, notification2);
             }
         });
 

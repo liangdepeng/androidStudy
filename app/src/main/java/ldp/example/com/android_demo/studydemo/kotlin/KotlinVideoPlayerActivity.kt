@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.ldp.base_lib.dialog.CustomDialog
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_kotlin.*
 import ldp.example.com.android_demo.R
@@ -26,6 +27,7 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
 
     var result = StringBuilder()
     var list: ArrayList<TestBean.TrailersBean> = arrayListOf()
+    val progressDialog: CustomDialog by lazy { CustomDialog(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,17 +54,18 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun requestData() {
+        showCustomDialog()
         Thread(object : Runnable {
-            var connection: HttpURLConnection? = null
+            lateinit var connection: HttpURLConnection
 
             override fun run() {
                 try {
                     val url = URL(Constants.INTERNET_URL)
-                    connection = url.openConnection() as HttpURLConnection?
-                    connection!!.requestMethod = "GET"
-                    connection!!.readTimeout = 5000
-                    connection!!.connectTimeout = 5000
-                    val inputStream = connection!!.inputStream
+                    connection = url.openConnection() as HttpURLConnection
+                    connection.requestMethod = "GET"
+                    connection.readTimeout = 5000
+                    connection.connectTimeout = 5000
+                    val inputStream = connection.inputStream
                     val reader = BufferedReader(InputStreamReader(inputStream))
                     var line: String? = null
                     result = StringBuilder()
@@ -73,7 +76,7 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
                 } catch (e: Exception) {
                     e.printStackTrace()
                 } finally {
-                    connection?.disconnect()
+                    connection.disconnect()
                 }
 
             }
@@ -87,6 +90,7 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showData(result: StringBuilder) {
+        cancelCustomDialog()
         runOnUiThread {
             test_txt.text = result.toString()
             val s = result.toString()
@@ -135,5 +139,17 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
             var image: ImageView = itemView.findViewById(R.id.image)
         }
 
+    }
+
+    fun showCustomDialog() {
+        if (!progressDialog.isShowing) {
+            progressDialog.show()
+        }
+    }
+
+    fun cancelCustomDialog() {
+        if (progressDialog.isShowing) {
+            progressDialog.dismiss()
+        }
     }
 }

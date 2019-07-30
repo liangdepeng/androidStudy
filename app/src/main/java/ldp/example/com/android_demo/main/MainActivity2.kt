@@ -1,5 +1,6 @@
 package ldp.example.com.android_demo.main
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Canvas
@@ -55,7 +56,7 @@ class MainActivity2 : AppCompatActivity() {
             return list.size
         }
 
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
             holder.txt.text = list[position].info
             holder.itemView.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
@@ -87,7 +88,7 @@ class MainActivity2 : AppCompatActivity() {
             val right = parent?.width?.minus(parent.paddingRight)?.toFloat()
 
             for (i in 0..childCount!!) {
-                var view = parent.getChildAt(i)
+                val view = parent.getChildAt(i)
                 view?.let {
                     val top = view.bottom.toFloat()
                     val bottom = (view.bottom + 2).toFloat()

@@ -1,13 +1,9 @@
 package ldp.example.com.android_demo;
 
-import android.app.Application;
-import android.content.Context;
-
 import com.example.ldp.base_lib.base.BaseApplication;
 import com.example.ldp.base_lib.utils.LogUtils;
 
 import org.litepal.LitePal;
-import org.litepal.LitePalApplication;
 import org.xutils.x;
 
 /**

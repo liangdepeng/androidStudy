@@ -25,6 +25,9 @@ import java.io.InputStreamReader;
 import ldp.example.com.android_demo.R;
 import ldp.example.com.android_demo.studydemo.kotlin.KotlinVideoPlayerActivity;
 
+/**
+ * @author mini
+ */
 public class QQLogin_Activity extends AppCompatActivity implements View.OnClickListener {
 
     @ViewInject(R.id.user_id)
@@ -45,8 +48,8 @@ public class QQLogin_Activity extends AppCompatActivity implements View.OnClickL
         x.view().inject(this);
 
         //readFile();
-        sp = getSharedPreferences("info2", Context.MODE_PRIVATE);
-        read_sp();
+
+        readSp();
         btn_login.setOnClickListener(this);
 
         ck_user_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -63,7 +66,7 @@ public class QQLogin_Activity extends AppCompatActivity implements View.OnClickL
 
                     SharedPreferences.Editor editor = sp.edit();
                     editor.clear();
-                    editor.commit();
+                    editor.apply();
                 }
             }
         });
@@ -96,7 +99,7 @@ public class QQLogin_Activity extends AppCompatActivity implements View.OnClickL
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("qq", user_name);
                     editor.putString("mm", user_mm);
-                    editor.commit();
+                    editor.apply();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -119,16 +122,15 @@ public class QQLogin_Activity extends AppCompatActivity implements View.OnClickL
             try {
                 FileInputStream in = new FileInputStream(file);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
                 //读取一行
                 String info = reader.readLine();
 
                 //分隔符分割
-                String user_mame2 = info.split("##")[0];
-                String user_mm2 = info.split("##")[1];
+                String userMame2 = info.split("##")[0];
+                String userMm2 = info.split("##")[1];
 
-                et_user_id.setText(user_mame2);
-                et_user_mm.setText(user_mm2);
+                et_user_id.setText(userMame2);
+                et_user_mm.setText(userMm2);
                 ck_user_check.setChecked(true);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -136,14 +138,13 @@ public class QQLogin_Activity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    private void read_sp() {
+    private void readSp() {
+        sp = getSharedPreferences("info2", Context.MODE_PRIVATE);
         et_user_id.setText(sp.getString("qq", ""));
         et_user_mm.setText(sp.getString("mm", ""));
-        if (!et_user_id.getText().toString().trim().equals("")) {
+        if (!"".equals(et_user_id.getText().toString().trim())) {
             ck_user_check.setChecked(true);
         }
-
     }
-
 
 }

@@ -66,7 +66,9 @@
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".studydemo.dialog.DialogsActivity" />
         <activity android:name=".studydemo.task.AsyncTaskActivity" />
-        <activity android:name=".studydemo.http.HttpActivity" />
+        <activity android:name=".studydemo.http.HttpActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
         <activity android:name=".studydemo.kotlin.KotlinVideoPlayerActivity" />
         <activity android:name=".studydemo.kotlin.SystemVideoPlayerActivity" />
         <activity android:name=".studydemo.kotlin.KotlinCodeDemoActivity1" />
@@ -86,7 +88,9 @@
         <activity android:name=".weatherdemo.MyWeatherActivity" />
         <activity android:name=".livedata.LiveDataTestActivity" />
         <activity android:name=".livedata.FragmentTestActivity" />
-        <activity android:name=".studydemo.webview.WebViewActivity" />
+        <activity android:name=".studydemo.webview.WebViewActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
         <activity android:name=".studydemo.pic.ImageCaptureActivity" />
         <activity android:name=".studydemo.notification.NotificationActivity" />
         <activity android:name=".studydemo.webview.HandlerWelcomeActivity"></activity>
