@@ -1,5 +1,6 @@
 package ldp.example.com.android_demo.studydemo.kotlin
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -12,7 +13,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.ldp.base_lib.dialog.CustomDialog
+import com.example.ldp.base_lib.utils.LogUtils
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_kotlin.*
 import ldp.example.com.android_demo.R
@@ -27,7 +28,9 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
 
     var result = StringBuilder()
     var list: ArrayList<TestBean.TrailersBean> = arrayListOf()
-    val progressDialog: CustomDialog by lazy { CustomDialog(this) }
+    private val progressDialog: ProgressDialog by lazy {
+        ProgressDialog(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +58,15 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun requestData() {
         showCustomDialog()
+
         Thread(object : Runnable {
             lateinit var connection: HttpURLConnection
 
             override fun run() {
                 try {
                     val url = URL(Constants.INTERNET_URL)
+                    Thread.sleep(1_000)
+                    LogUtils.e("netUrl", url.toString())
                     connection = url.openConnection() as HttpURLConnection
                     connection.requestMethod = "GET"
                     connection.readTimeout = 5000
@@ -125,10 +131,12 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent(context, SystemVideoPlayerActivity::class.java)
                 val bundle = Bundle()
                 bundle.putSerializable("video_list", list)
-                intent.putExtras(bundle)
-                intent.putExtra("video_position", position)
-                intent.putExtra("video_url", bean.url)
-                intent.putExtra("video_heightUrl", bean.hightUrl)
+                intent.run {
+                    putExtras(bundle)
+                    putExtra("video_position", position)
+                    putExtra("video_url", bean.url)
+                    putExtra("video_heightUrl", bean.hightUrl)
+                }
                 context.startActivity(intent)
             }
         }
@@ -143,6 +151,7 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
 
     fun showCustomDialog() {
         if (!progressDialog.isShowing) {
+            progressDialog.setMessage("正在加载中...")
             progressDialog.show()
         }
     }

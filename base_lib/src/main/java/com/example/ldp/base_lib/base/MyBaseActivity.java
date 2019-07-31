@@ -3,7 +3,12 @@ package com.example.ldp.base_lib.base;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
+
+import com.example.ldp.base_lib.R;
 
 
 /**
@@ -58,4 +63,14 @@ public abstract class MyBaseActivity extends AppCompatActivity implements MyBase
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 方法1: Activity.getWindow().getDecorView().findViewById(android.R.id.content)
+     * 方法2: Activity.findViewById(android.R.id.content)
+     * 方法3: Activity.findViewById(android.R.id.content).getRootView()
+     *
+     * @return contentView
+     */
+    public View getContentView() {
+        return (ViewGroup) getWindow().getDecorView();
+    }
 }
