@@ -49,6 +49,7 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+
         bindView(viewHolder, dataList.get(position), position, convertView, parent);
 
         return convertView;
