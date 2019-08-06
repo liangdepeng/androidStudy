@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.ldp.base_lib.utils.LogUtils
+import com.example.ldp.base_lib.view.MyRecyclerViewViewHolder
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_kotlin.*
 import ldp.example.com.android_demo.R
@@ -160,5 +161,40 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
         if (progressDialog.isShowing) {
             progressDialog.dismiss()
         }
+    }
+
+    class MyListAdapter2(var context: Context, var list: ArrayList<TestBean.TrailersBean>) : RecyclerView.Adapter<MyRecyclerViewViewHolder>() {
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRecyclerViewViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_test, parent, false)
+            return MyRecyclerViewViewHolder(view)
+        }
+
+        override fun getItemCount(): Int {
+            return list.size
+        }
+
+        override fun onBindViewHolder(holder: MyRecyclerViewViewHolder, position: Int) {
+            val bean = list[position]
+            holder.setText(R.id.txt,bean.movieName)
+            //holder.txt.text = bean.movieName
+            holder.setText(R.id.summary,bean.summary?:bean.videoTitle)
+            //holder.summary.text = bean.summary ?: bean.videoTitle
+            x.image().bind(holder.getView(R.id.image), bean.coverImg)
+            holder.itemView.setOnClickListener {
+                Toast.makeText(context, bean.movieName + " onClicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, SystemVideoPlayerActivity::class.java)
+                val bundle = Bundle()
+                bundle.putSerializable("video_list", list)
+                intent.run {
+                    putExtras(bundle)
+                    putExtra("video_position", position)
+                    putExtra("video_url", bean.url)
+                    putExtra("video_heightUrl", bean.hightUrl)
+                }
+                context.startActivity(intent)
+            }
+        }
+
     }
 }

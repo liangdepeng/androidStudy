@@ -131,7 +131,6 @@ public class CallphoneActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d("activity", "onDestroy()");
-
     }
 
     /**

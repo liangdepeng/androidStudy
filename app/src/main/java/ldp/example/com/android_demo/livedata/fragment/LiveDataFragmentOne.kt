@@ -40,7 +40,6 @@ class LiveDataFragmentOne : MyBaseFragment() {
                     mFragmentViewModel.changeData(progress)
                 }
             }
-
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })

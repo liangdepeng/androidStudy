@@ -3,11 +3,14 @@ package ldp.example.com.android_demo.studydemo.webview
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.net.http.SslError
+import android.os.Build
+import android.support.annotation.RequiresApi
 import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.*
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.example.ldp.base_lib.base.MyBaseActivity
 import com.example.ldp.base_lib.utils.AppUtils
 import com.example.ldp.base_lib.utils.LogUtils
@@ -79,26 +82,42 @@ class WebViewActivity : MyBaseActivity() {
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 view?.loadUrl(request.toString())
-                LogUtils.d("webViewClient","  --shouldOverrideUrlLoading--  ")
+                LogUtils.d("webViewClient", "  --shouldOverrideUrlLoading--  ")
                 return true
             }
 
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
-                LogUtils.d("webViewClient","  --onPageStarted--  ")
+                LogUtils.d("webViewClient", "  --onPageStarted--  ")
                 showProgressDialog()
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
-                LogUtils.d("webViewClient","  --onPageFinished--  ")
+                LogUtils.d("webViewClient", "  --onPageFinished--  ")
                 hideProgressDialog()
             }
 
             override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
 
-                handler?.proceed() //表示等待证书响应
+                handler?.proceed() //忽略错误加载
                 //handler?.cancel() //表示挂起连接，为默认方式 (super.onReceivedSslError(view, handler, error))
                 // handler?.handleMessage(null) //可做其他处理
+            }
 
+            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+            override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+                super.onReceivedError(view, request, error)
+                if (request != null && request.isForMainFrame) {
+                    webView.loadUrl("https://www.baidu.com/")
+                }
+                Toast.makeText(this@WebViewActivity, "加载网页出错", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onReceivedError(view: WebView?, errorCode: Int, description: String?, failingUrl: String?) {
+                super.onReceivedError(view, errorCode, description, failingUrl)
+            }
+
+            override fun onReceivedHttpError(view: WebView?, request: WebResourceRequest?, errorResponse: WebResourceResponse?) {
+                super.onReceivedHttpError(view, request, errorResponse)
             }
         }
 

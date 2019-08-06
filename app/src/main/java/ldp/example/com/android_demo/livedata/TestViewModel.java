@@ -22,8 +22,8 @@ public class TestViewModel {
         return mData;
     }
 
-    public MutableLiveData<Integer> getData2(){
-        if (mData2==null){
+    public MutableLiveData<Integer> getData2() {
+        if (mData2 == null) {
             mData2 = new MutableLiveData<>();
         }
         return mData2;
@@ -39,8 +39,8 @@ public class TestViewModel {
         return mLiveDatas;
     }
 
-    public void removeDataObserver(MutableLiveData data, Observer observer){
-        if (mLiveDatas==null){
+    public void removeDataObserver(MutableLiveData data, Observer observer) {
+        if (mLiveDatas == null) {
             mLiveDatas = new MediatorLiveData();
         }
         mLiveDatas.removeSource(data);
