@@ -35,7 +35,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".studydemo.zidingyikj.circle"
+            android:name=".studydemo.zidingyikj.circleActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

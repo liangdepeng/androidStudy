@@ -232,6 +232,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
                 .placeholder(placeholder)
                 .centerCrop();
         //      .error(errorImagineId)    , int errorImagineId
+
         Glide.with(context).load(netResUrl)
                 .apply(requestOptions)
                 .into(image);

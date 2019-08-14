@@ -1,8 +1,12 @@
 package com.example.ldp.base_lib.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.net.TrafficStats;
 import android.os.Looper;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 /**
  * created by Da Peng at 2019/6/21
@@ -38,15 +42,15 @@ public class AppUtils {
             isMainThread = true;
         }
 
-        String str = " 【threadName : "
-                + Thread.currentThread().getName() + "】-【threadId : "
-                + Thread.currentThread().getId() + "】-【threadState : "
+        String str = " \n【threadName : "
+                + Thread.currentThread().getName() + "】\n-\n【threadId : "
+                + Thread.currentThread().getId() + "】\n-\n【threadState : "
                 + Thread.currentThread().getState();
 
         if (isMainThread) {
-            return str + "】--- 主线程";
+            return str + "】\n-\n      --- 主线程 ---         ";
         } else {
-            return str + "】--- 子线程";
+            return str + "】\n-\n      --- 子线程 ---         ";
         }
 
     }
@@ -92,5 +96,59 @@ public class AppUtils {
         lastTotalRxBytes = nowTotalRxBytes;
         netSpeed = String.valueOf(speed) + " kb/s";
         return netSpeed;
+    }
+
+//    public static int getScreenWidth(Context context){
+//        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+//        DisplayMetrics outMetrics = new DisplayMetrics();
+//        windowManager.getDefaultDisplay().getRealMetrics(outMetrics);
+//        int widthPixel = outMetrics.widthPixels;
+//        int heightPixel = outMetrics.heightPixels;
+//        return widthPixel;
+//    }
+//
+//    public static int getScreenHeight(Context context){
+//        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+//        DisplayMetrics outMetrics = new DisplayMetrics();
+//        windowManager.getDefaultDisplay().getRealMetrics(outMetrics);
+//        int widthPixel = outMetrics.widthPixels;
+//        int heightPixel = outMetrics.heightPixels;
+//        return heightPixel;
+//    }
+
+    /**
+     * 获取屏幕宽度
+     *
+     * @param context
+     * @return
+     */
+    public static int getScreenWidth(Context context) {
+
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+
+        Point size = new Point();
+
+        ((Activity) context).getWindowManager().getDefaultDisplay().getSize(size);
+
+        return size.x;
+
+    }
+
+    /**
+     * 获取屏幕高度
+     *
+     * @param context
+     * @return
+     */
+    public static int getScreenHeight(Context context) {
+
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+
+        Point size = new Point();
+
+        ((Activity) context).getWindowManager().getDefaultDisplay().getSize(size);
+
+        return size.y;
+
     }
 }

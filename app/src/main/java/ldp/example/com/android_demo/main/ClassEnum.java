@@ -21,6 +21,7 @@ import ldp.example.com.android_demo.studydemo.wrisesdfile.SharedPreferenceActivi
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteSDfileActivity;
 import ldp.example.com.android_demo.studydemo.xml_.XmlActivity;
+import ldp.example.com.android_demo.studydemo.zidingyikj.circleActivity;
 import ldp.example.com.android_demo.weatherdemo.WeatherSplashActivity;
 
 /**
@@ -91,7 +92,9 @@ public enum ClassEnum {
     // 安卓原生弹窗
     ANDROID_DIALOG("安卓原生弹窗", DialogsActivity.class, false),
 
-    ANDROID_H5("安卓基本h5交互", androidH5Activity.class, false);
+    ANDROID_H5("安卓基本h5交互", androidH5Activity.class, false),
+
+    CIRCLEACTIVITY("test", circleActivity.class, false);
 
     private String info;
     private Class clazz;

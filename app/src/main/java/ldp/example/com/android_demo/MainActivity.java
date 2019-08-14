@@ -26,7 +26,7 @@ import ldp.example.com.android_demo.studydemo.wrisesdfile.SharedPreferenceActivi
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteSDfileActivity;
 import ldp.example.com.android_demo.studydemo.xml_.XmlActivity;
-import ldp.example.com.android_demo.studydemo.zidingyikj.circle;
+import ldp.example.com.android_demo.studydemo.zidingyikj.circleActivity;
 import ldp.example.com.android_demo.weather.activity.WeatherWelcomeActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void start_zdy_view() {
         Intent intent = new Intent(MainActivity.this,
-                circle.class);
+                circleActivity.class);
         startActivity(intent);
     }
 

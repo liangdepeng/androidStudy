@@ -26,4 +26,21 @@
         android:layout_height="wrap_content"
         android:text="启动对话框活动"/>
 
+    <Button
+        android:id="@+id/testSameImagesView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试SameImagesView"
+        android:textAllCaps="false"/>
+
+    <com.example.ldp.base_lib.view.SameImagesView
+        android:id="@+id/sameImagines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.example.ldp.base_lib.view.BezierView
+        android:id="@+id/bezierView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </com.example.ldp.base_lib.view.BezierView>
 </LinearLayout>

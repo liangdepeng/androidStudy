@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--画图板-->
+    <declare-styleable name="DrawImg">
+        <attr name="PaintColor" />
+        <attr name="PaintWidth" />
+        <attr name="CanvasImg" />
+    </declare-styleable>
+    <!--单位-->
+    <attr name="PaintColor" format="color" />
+    <attr name="PaintWidth" format="dimension" />
+    <attr name="CanvasImg" format="reference" />
+</resources>

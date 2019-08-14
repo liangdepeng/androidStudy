@@ -6,10 +6,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.ldp.base_lib.view.BezierView;
+import com.example.ldp.base_lib.view.SameImagesView;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -25,8 +30,16 @@ public class CallphoneActivity extends BaseActivity {
     private EditText number;
     @ViewInject(R.id.dialog)
     private Button btnDialog;
-
+    @ViewInject(R.id.sameImagines)
+    private SameImagesView mSameImagesView;
+    @ViewInject(R.id.testSameImagesView)
+    private Button mTestBtnSameImagesView;
+    @ViewInject(R.id.bezierView)
+    private BezierView bezierView;
     private String mPhoneNumber;
+    private boolean show = true;
+    private ImageView mImageView;
+    private View mView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +48,12 @@ public class CallphoneActivity extends BaseActivity {
         Log.d("activity", "onCreate()");
         x.view().inject(this);
         //Intent_data();
+        mImageView = new ImageView(this);
+        mImageView.setImageResource(R.drawable.icon_number_of_buyers);
+        mView = LayoutInflater.from(this).inflate(com.example.ldp.base_lib.R.layout.activity_my_base, null, false);
         callPhone.setOnClickListener(new MyCallPhoneOnClickListener());
         btnDialog.setOnClickListener(new MyDialogOnClickListener());
+        mTestBtnSameImagesView.setOnClickListener(new MySameImagesTestOnClickListener());
     }
 
     /**
@@ -155,6 +172,18 @@ public class CallphoneActivity extends BaseActivity {
         public void onClick(View v) {
             Intent intent = new Intent(CallphoneActivity.this, DialogActivity.class);
             startActivity(intent);
+        }
+    }
+
+    private class MySameImagesTestOnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            if (show) {
+                mSameImagesView.setImageRes(R.drawable.icon_number_of_buyers, 10, SameImagesView.VERTICAL);
+            } else {
+                mSameImagesView.removeAllViews();
+            }
+            show = !show;
         }
     }
 }
