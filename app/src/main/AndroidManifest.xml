@@ -110,6 +110,7 @@
         </activity>
         <activity android:name=".studydemo.json.GsonParseActivity"></activity>
         <activity android:name=".studydemo.webview.androidH5Activity"></activity>
+        <activity android:name=".studydemo.callphone.MainActivity23"/>
     </application>
 
 </manifest>

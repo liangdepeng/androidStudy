@@ -33,6 +33,13 @@
         android:text="测试SameImagesView"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/start_this"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="startThis"
+        android:textAllCaps="false"/>
+
     <com.example.ldp.base_lib.view.SameImagesView
         android:id="@+id/sameImagines"
         android:layout_width="match_parent"

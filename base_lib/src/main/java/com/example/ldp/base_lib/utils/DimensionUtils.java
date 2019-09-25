@@ -33,7 +33,7 @@ public class DimensionUtils {
     }
 
     /**
-     * 的获取状态栏高度
+     * 获取状态栏高度
      *
      * @param context
      * @return

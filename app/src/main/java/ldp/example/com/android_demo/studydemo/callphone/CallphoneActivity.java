@@ -36,6 +36,8 @@ public class CallphoneActivity extends BaseActivity {
     private Button mTestBtnSameImagesView;
     @ViewInject(R.id.bezierView)
     private BezierView bezierView;
+    @ViewInject(R.id.start_this)
+    private Button start_this;
     private String mPhoneNumber;
     private boolean show = true;
     private ImageView mImageView;
@@ -54,6 +56,13 @@ public class CallphoneActivity extends BaseActivity {
         callPhone.setOnClickListener(new MyCallPhoneOnClickListener());
         btnDialog.setOnClickListener(new MyDialogOnClickListener());
         mTestBtnSameImagesView.setOnClickListener(new MySameImagesTestOnClickListener());
+        start_this.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(CallphoneActivity.this, CallphoneActivity.class));
+            }
+        });
     }
 
     /**
@@ -182,6 +191,7 @@ public class CallphoneActivity extends BaseActivity {
                 mSameImagesView.setImageRes(R.drawable.icon_number_of_buyers, 10, SameImagesView.VERTICAL);
             } else {
                 mSameImagesView.removeAllViews();
+                startActivity(new Intent(CallphoneActivity.this,MainActivity23.class));
             }
             show = !show;
         }

@@ -1,8 +1,9 @@
 package com.example.ldp.base_lib.utils;
 
-import android.content.Context;
-import android.net.TrafficStats;
+import android.annotation.SuppressLint;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
 
@@ -43,7 +44,30 @@ public class TimeUtils {
     }
 
 
+    /**
+     * 日期格式及转换
+     *
+     * @param dateString  输入日期
+     * @param inputFormat  输入格式
+     * @param outFormat 输出格式
+     * @return 输出格式的时间
+     */
+    @SuppressLint("SimpleDateFormat")
+    public static String parseDate(String dateString, String inputFormat, String outFormat) {
 
+        try {
+            //"yyyy-MM-dd HH:mm:ss"
+            SimpleDateFormat inputDate = new SimpleDateFormat(inputFormat);
+            //"MM月dd日"  "mm:ss"
+            SimpleDateFormat outputDate = new SimpleDateFormat(outFormat);
+            Date date = inputDate.parse(dateString);
+            return outputDate.format(date);
+
+        } catch (Exception e) {
+            return "";
+        }
+
+    }
 
 
 }
