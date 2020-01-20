@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".studydemo.dialog.TestPopupDialogActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/auto_left_right_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="300dp"
+                android:layout_marginRight="300dp"
+                android:text="leftOrRight"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#8000" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="ScrollView  按钮在下面"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/anchorViewBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="anchorViewBottom"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="ScrollView  按钮在下面"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/popupBtn01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="popupWindow01"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/bottomPopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="bottomPopup"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/leftPopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="leftPopup"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/rightPopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="rightPopup"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/anchorViewTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="anchorViewTop"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="600dp"
+                android:text="根据高度自动向上向下的popupWindow"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

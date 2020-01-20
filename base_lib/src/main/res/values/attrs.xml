@@ -10,4 +10,11 @@
     <attr name="PaintColor" format="color" />
     <attr name="PaintWidth" format="dimension" />
     <attr name="CanvasImg" format="reference" />
+
+    <declare-styleable name="BallView">
+        <attr name="viewColor" format="color" />
+        <attr name="radius" format="float" />
+        <!--        <attr name="imageSrc" format="" </attr>-->
+    </declare-styleable>
+
 </resources>

@@ -1,22 +1,21 @@
 package ldp.example.com.android_demo.studydemo.webview
 
-import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import com.example.ldp.base_lib.utils.AppUtils
 import com.example.ldp.base_lib.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_welcome.*
+import ldp.example.com.android_demo.MyApplication
 import ldp.example.com.android_demo.R
-import java.lang.ref.WeakReference
 
 class HandlerWelcomeActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var weakReference :WeakReference<Activity>
     private val TAG = 100
     private var loadingTime = 5
 
@@ -77,9 +76,48 @@ class HandlerWelcomeActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 2 -> {
                     LogUtils.e("handler", "callback is null -> handler.dispatchMessage(message)")
+                    thread2()
+                    thread3()
                 }
             }
         }
+    }
+
+    private var handler2: MyHandler? = null
+
+    fun thread2() {
+        Thread(Runnable {
+            LogUtils.e("thread2", AppUtils.getThreadInfo())
+            Looper.prepare()
+            handler2 = MyHandler
+            Looper.loop()
+        }).start()
+
+    }
+
+    object MyHandler : Handler() {
+
+        override fun handleMessage(msg: Message?) {
+            when (msg?.what) {
+                0 -> {
+                    Toast.makeText(MyApplication.getAppContent(), "3_000", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    Toast.makeText(MyApplication.getAppContent(), "121212", Toast.LENGTH_SHORT).show()
+                    msg?.target?.sendEmptyMessageDelayed(0, 3_000)
+                }
+            }
+
+        }
+    }
+
+    fun thread3() {
+        val message = Message.obtain()
+        message.what = 1
+        Thread(Runnable {
+            LogUtils.e("thread3", AppUtils.getThreadInfo())
+            handler2?.sendMessage(message)
+        }).start()
     }
 
     override fun onClick(v: View?) {
@@ -89,6 +127,7 @@ class HandlerWelcomeActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onDestroy() {
         handler.removeCallbacksAndMessages(null)
+        handler2?.removeCallbacksAndMessages(null)
         super.onDestroy()
     }
 

@@ -35,4 +35,22 @@
         <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
     </style>
 
+    <!--    底部-->
+    <style name="popup_anim_bottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_bottom_exit</item>
+    </style>
+
+    <!--    向上-->
+    <style name="popup_dialog_anim2" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_dialog_enter2</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_dialog_exit2</item>
+    </style>
+
+    <!--    向下-->
+    <style name="popup_dialog_anim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_dialog_exit</item>
+    </style>
+
 </resources>
