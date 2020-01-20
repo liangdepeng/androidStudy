@@ -1,11 +1,11 @@
 package ldp.example.com.android_demo.studydemo.views
 
 import android.os.Bundle
-import android.support.design.widget.TabLayout.MODE_FIXED
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v7.app.AppCompatActivity
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentStatePagerAdapter
+import com.google.android.material.tabs.TabLayout.MODE_FIXED
 import kotlinx.android.synthetic.main.activity_base_ui_layout.*
 import ldp.example.com.android_demo.R
 

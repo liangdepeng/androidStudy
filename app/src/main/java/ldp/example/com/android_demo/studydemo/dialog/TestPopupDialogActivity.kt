@@ -1,13 +1,14 @@
 package ldp.example.com.android_demo.studydemo.dialog
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+
 import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ldp.base_lib.dialog.MyPopupWindow
 import com.example.ldp.base_lib.dialog.PopupWindowHelper
 import kotlinx.android.synthetic.main.activity_test_popup_dialog.*

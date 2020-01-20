@@ -1,14 +1,15 @@
 package com.example.ldp.base_lib.view.recyclerview;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.RecyclerView;
+import androidx.core.widget.SwipeRefreshLayout;
 
 import com.example.ldp.base_lib.R;
 

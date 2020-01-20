@@ -1,14 +1,5 @@
 package com.example.ldp.base_lib.view;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.util.TypedValue;
-import android.view.View;
-
-import com.example.ldp.base_lib.R;
-
 /**
  * created by Da Peng at 2019/8/9
  */

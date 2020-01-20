@@ -3,7 +3,6 @@ package ldp.example.com.android_demo.studydemo.kotlin
 import android.content.Context
 import android.media.AudioManager
 import android.media.MediaPlayer
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -11,8 +10,8 @@ import android.os.Message
 import android.view.KeyEvent
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_video_player.*
-import kotlinx.android.synthetic.main.activity_video_player.view.*
 import ldp.example.com.android_demo.R
 
 class SystemVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {

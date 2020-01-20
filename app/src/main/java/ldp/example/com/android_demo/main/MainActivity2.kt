@@ -7,14 +7,14 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main2.*
 import ldp.example.com.android_demo.R
 
@@ -77,12 +77,14 @@ class MainActivity2 : AppCompatActivity() {
 
     class MyItemDecoration : RecyclerView.ItemDecoration() {
 
-        override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
+        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
             super.getItemOffsets(outRect, view, parent, state)
             outRect?.bottom = 2
         }
 
-        override fun onDraw(c: Canvas?, parent: RecyclerView?, state: RecyclerView.State?) {
+
+
+        override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
             val childCount = parent?.childCount
             val left = parent?.paddingLeft?.toFloat()
             val right = parent?.width?.minus(parent.paddingRight)?.toFloat()

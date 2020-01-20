@@ -111,6 +111,8 @@
         <activity android:name=".studydemo.json.GsonParseActivity"></activity>
         <activity android:name=".studydemo.webview.androidH5Activity"></activity>
         <activity android:name=".studydemo.callphone.MainActivity23"/>
+        <activity android:name=".studydemo.dialog.TestPopupDialogActivity" />
+        <activity android:name=".studydemo.views.UIActivity" />
     </application>
 
 </manifest>

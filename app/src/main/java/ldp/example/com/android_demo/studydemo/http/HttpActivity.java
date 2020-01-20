@@ -1,6 +1,5 @@
 package ldp.example.com.android_demo.studydemo.http;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -9,17 +8,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ldp.base_lib.utils.AppUtils;
+import com.example.ldp.base_lib.utils.LogUtils;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Objects;
 
 import ldp.example.com.android_demo.R;
-
-import com.example.ldp.base_lib.utils.AppUtils;
-import com.example.ldp.base_lib.utils.LogUtils;
 
 public class HttpActivity extends AppCompatActivity implements View.OnClickListener {
 

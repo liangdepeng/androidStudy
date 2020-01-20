@@ -2,19 +2,19 @@ package ldp.example.com.android_demo.studydemo.wrisesdfile;
 
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.Nullable;
 import android.text.format.Formatter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.File;
 import java.io.FileOutputStream;
-
 
 import ldp.example.com.android_demo.R;
 import ldp.example.com.android_demo.studydemo.utils.BaseActivity;

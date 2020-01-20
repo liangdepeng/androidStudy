@@ -3,8 +3,7 @@ package ldp.example.com.android_demo.studydemo.webview
 import android.annotation.SuppressLint
 import android.app.TimePickerDialog
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.support.v7.app.AppCompatActivity
+
 import android.view.ViewGroup
 import android.webkit.JavascriptInterface
 import android.webkit.WebSettings
@@ -12,6 +11,7 @@ import android.webkit.WebView
 import android.widget.FrameLayout
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.androidh5_layout.*
 import ldp.example.com.android_demo.MyApplication
 import ldp.example.com.android_demo.R

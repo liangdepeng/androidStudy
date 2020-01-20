@@ -1,10 +1,11 @@
 package ldp.example.com.android_demo.livedata.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.SeekBar
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.ldp.base_lib.base.MyBaseFragment
 import kotlinx.android.synthetic.main.fragment_live_data_one.*
 import ldp.example.com.android_demo.R

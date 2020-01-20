@@ -1,14 +1,12 @@
 package com.example.ldp.base_lib.base;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import com.example.ldp.base_lib.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 /**

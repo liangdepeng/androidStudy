@@ -2,11 +2,10 @@ package ldp.example.com.android_demo.mvp.base;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import ldp.example.com.android_demo.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class BaseMvpActivity extends AppCompatActivity implements IBaseView {
 

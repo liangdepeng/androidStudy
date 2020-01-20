@@ -1,9 +1,9 @@
 package ldp.example.com.android_demo.livedata;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.ldp.base_lib.bean.WeatherBean;
 import com.example.ldp.base_lib.http.HttpRequestInfo;

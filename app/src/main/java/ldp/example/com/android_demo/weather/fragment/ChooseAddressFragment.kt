@@ -1,11 +1,11 @@
 package ldp.example.com.android_demo.weather.fragment
 
 import android.content.Intent
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.choose_address_fragment.*
 import ldp.example.com.android_demo.R
@@ -18,7 +18,6 @@ import org.litepal.crud.DataSupport
 import org.xutils.common.Callback
 import org.xutils.http.RequestParams
 import org.xutils.x
-import kotlin.collections.ArrayList
 
 /**
  *  Error
@@ -104,7 +103,7 @@ class ChooseAddressFragment : BaseFragment(), View.OnClickListener {
                     .find(AddressBean.AddressDetailsBean::class.java)
             SPUtils.put(context, "provinceList", list)
             addressList.addAll(list)
-            addressRecycler.adapter.notifyDataSetChanged()
+            addressRecycler.adapter?.notifyDataSetChanged()
             level = LEVEL_PROVINCE
         }
     }
@@ -132,7 +131,7 @@ class ChooseAddressFragment : BaseFragment(), View.OnClickListener {
             addressList.clear()
             addressList.addAll(list!!)
             title.text = addressList[position].city
-            addressRecycler.adapter.notifyDataSetChanged()
+            addressRecycler.adapter?.notifyDataSetChanged()
 
         }
     }
@@ -152,7 +151,7 @@ class ChooseAddressFragment : BaseFragment(), View.OnClickListener {
             addressList.addAll(list!!)
             val titles = DataSupport.where("cityid = ?", list[0].parentid).find(AddressBean.AddressDetailsBean::class.java)
             title.text = titles[0].city
-            addressRecycler.adapter.notifyDataSetChanged()
+            addressRecycler.adapter?.notifyDataSetChanged()
         }
     }
 }

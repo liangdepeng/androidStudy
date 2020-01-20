@@ -2,13 +2,14 @@ package ldp.example.com.android_demo.studydemo.sendmessage;
 
 import android.Manifest;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;

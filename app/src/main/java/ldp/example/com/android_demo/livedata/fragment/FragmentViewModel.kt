@@ -1,10 +1,10 @@
 package ldp.example.com.android_demo.livedata.fragment
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.ldp.base_lib.http.HttpRequestInfo
 import com.example.ldp.base_lib.http.onHttpResponseListner
-import java.lang.Exception
 
 /**
  *  created by Da Peng at 2019/6/26

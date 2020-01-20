@@ -1,10 +1,10 @@
 package com.example.ldp.base_lib.dialog;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.annotation.NonNull;
 
 import com.bigkoo.pickerview.adapter.ArrayWheelAdapter;
 import com.contrarywind.listener.OnItemSelectedListener;

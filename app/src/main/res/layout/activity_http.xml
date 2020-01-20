@@ -8,7 +8,7 @@
     tools:context=".studydemo.http.HttpActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:focusable="true"
@@ -98,6 +98,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/address_et"
             app:layout_constraintTop_toBottomOf="@+id/btn_http_btn" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.ConstraintLayout>
 
 </ScrollView>

@@ -1,7 +1,8 @@
 package ldp.example.com.android_demo.service;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import ldp.example.com.android_demo.R;
 

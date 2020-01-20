@@ -3,11 +3,12 @@ package com.example.ldp.base_lib.base;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.StringRes;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.StringRes;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;

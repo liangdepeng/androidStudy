@@ -1,10 +1,11 @@
 package ldp.example.com.android_demo.studydemo.kotlin
 
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_kotlin_code_demo1.*
 import ldp.example.com.android_demo.R
 import java.util.*

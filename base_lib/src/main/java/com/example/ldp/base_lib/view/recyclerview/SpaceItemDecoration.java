@@ -1,8 +1,9 @@
 package com.example.ldp.base_lib.view.recyclerview;
 
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.appcompat.widget.RecyclerView;
 
 /**
  * created by ldp at 2018/12/20

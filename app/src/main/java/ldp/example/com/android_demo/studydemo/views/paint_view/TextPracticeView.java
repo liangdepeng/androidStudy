@@ -9,14 +9,15 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.LinearInterpolator;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 /**
  * created by ldp at 2018/12/19

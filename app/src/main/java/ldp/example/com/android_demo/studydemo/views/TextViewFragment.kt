@@ -3,7 +3,7 @@ package ldp.example.com.android_demo.studydemo.views
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.app.Fragment
+
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_ui.*
 import ldp.example.com.android_demo.R
 
@@ -23,7 +24,7 @@ import ldp.example.com.android_demo.R
  *  @author  mini
  *  @date 2019/10/23
  */
-class TextViewFragment :Fragment(){
+class TextViewFragment : Fragment(){
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null

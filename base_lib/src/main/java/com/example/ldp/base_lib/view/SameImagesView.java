@@ -5,21 +5,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PathEffect;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.example.ldp.base_lib.R;
+import androidx.annotation.Nullable;
+
 import com.example.ldp.base_lib.utils.AppUtils;
 import com.example.ldp.base_lib.utils.LogUtils;
 import com.example.ldp.base_lib.utils.ViewUtils;

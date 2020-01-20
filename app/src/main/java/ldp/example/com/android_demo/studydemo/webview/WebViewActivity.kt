@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.net.http.SslError
 import android.os.Build
-import android.support.annotation.RequiresApi
 import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.*
 import android.widget.FrameLayout
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.ldp.base_lib.base.MyBaseActivity
 import com.example.ldp.base_lib.utils.AppUtils
 import com.example.ldp.base_lib.utils.LogUtils

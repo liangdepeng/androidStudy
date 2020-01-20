@@ -1,11 +1,12 @@
 package ldp.example.com.android_demo.mvp.test1;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import ldp.example.com.android_demo.R;
 
