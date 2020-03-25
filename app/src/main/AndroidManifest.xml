@@ -97,9 +97,10 @@
         <activity android:name=".service.TestServiceActivity" />
 
         <service
-            android:name=".service.TestService"
+            android:name=".service.TestStartService"
             android:enabled="true"
             android:exported="true" />
+        <service android:name=".service.TestBindService" />
 
         <activity android:name=".main.MainActivity2">
             <intent-filter>
