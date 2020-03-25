@@ -12,7 +12,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 
-import com.example.ldp.base_lib.R;
 import com.example.ldp.base_lib.utils.AppUtils;
 
 /**
@@ -213,21 +212,21 @@ public class MyPopupWindow extends PopupWindow {
             if (isNeedShowLeft) {
                 popupWindowLoc[0] = anchorLoc[0] - popupViewWidth;
                 popupWindowLoc[1] = anchorViewHeight / 2 + anchorLoc[1] - popupViewHeight / 2;
-                setAnimationStyle(R.style.popup_anim_left);
+                //setAnimationStyle(R.style.popup_anim_left);
             } else {
                 popupWindowLoc[0] = anchorLoc[0] + anchorViewWidth;
                 popupWindowLoc[1] = anchorViewHeight / 2 + anchorLoc[1] - popupViewHeight / 2;
-                setAnimationStyle(R.style.popup_anim_left);
+                //setAnimationStyle(R.style.popup_anim_left);
             }
         } else {
             if (gravity == Gravity.START) {
                 popupWindowLoc[0] = anchorLoc[0] - popupViewWidth;
                 popupWindowLoc[1] = anchorViewHeight / 2 + anchorLoc[1] - popupViewHeight / 2;
-                setAnimationStyle(R.style.popup_anim_left);
+                //setAnimationStyle(R.style.popup_anim_left);
             } else if (gravity == Gravity.END) {
                 popupWindowLoc[0] = anchorLoc[0] + anchorViewWidth;
                 popupWindowLoc[1] = anchorViewHeight / 2 + anchorLoc[1] - popupViewHeight / 2;
-                setAnimationStyle(R.style.popup_anim_left);
+               // setAnimationStyle(R.style.popup_anim_left);
             }
         }
 

@@ -1,9 +1,5 @@
 package com.example.ldp.base_lib.view;
 
-/**
- * created by Da Peng at 2019/8/7
- */
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;

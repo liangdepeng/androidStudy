@@ -1,6 +1,5 @@
 package ldp.example.com.android_demo;
 
-import com.example.catchcrashlib.ExceptionCrashHandler;
 import com.example.ldp.base_lib.base.BaseApplication;
 import com.example.ldp.base_lib.utils.LogUtils;
 
@@ -24,6 +23,7 @@ public class MyApplication extends BaseApplication {
         x.Ext.setDebug(false);
         LitePal.initialize(this);
         LogUtils.setDebug(true);
-        ExceptionCrashHandler.getInstance().initInterceptCrash(getApplicationContext());
+        // 全局异常拦截
+       // ExceptionCrashHandler.getInstance().initInterceptCrash(getApplicationContext());
     }
 }

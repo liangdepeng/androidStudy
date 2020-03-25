@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.CoordinatorLayout;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +16,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.StyleRes;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -26,6 +25,7 @@ import com.example.ldp.base_lib.R;
 import com.example.ldp.base_lib.base.ViewHolder;
 import com.example.ldp.base_lib.utils.AppUtils;
 import com.example.ldp.base_lib.utils.DimensionUtils;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 public abstract class BaseDialog extends Dialog {
 
@@ -237,13 +237,13 @@ public abstract class BaseDialog extends Dialog {
         if (!isSupportBottomSheet)
             return view;
         final FrameLayout container = (FrameLayout) View.inflate(getContext(),
-                android.support.design.R.layout.design_bottom_sheet_dialog, null);
+                R.layout.design_bottom_sheet_dialog, null);
         final CoordinatorLayout coordinator =
-                (CoordinatorLayout) container.findViewById(android.support.design.R.id.coordinator);
+                (CoordinatorLayout) container.findViewById(R.id.coordinator);
         if (layoutResId != 0 && view == null) {
             view = getLayoutInflater().inflate(layoutResId, coordinator, false);
         }
-        FrameLayout bottomSheet = (FrameLayout) coordinator.findViewById(android.support.design.R.id.design_bottom_sheet);
+        FrameLayout bottomSheet = (FrameLayout) coordinator.findViewById(R.id.design_bottom_sheet);
         mBehavior = BottomSheetBehavior.from(bottomSheet);
         mBehavior.setBottomSheetCallback(mBottomSheetCallback);
         mBehavior.setHideable(mCancelable);
@@ -254,7 +254,7 @@ public abstract class BaseDialog extends Dialog {
             bottomSheet.addView(view, params);
         }
         // We treat the CoordinatorLayout as outside the dialog though it is technically inside
-        coordinator.findViewById(android.support.design.R.id.touch_outside).setOnClickListener(new View.OnClickListener() {
+        coordinator.findViewById(R.id.touch_outside).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mCancelable && isShowing() && shouldWindowCloseOnTouchOutside()) {

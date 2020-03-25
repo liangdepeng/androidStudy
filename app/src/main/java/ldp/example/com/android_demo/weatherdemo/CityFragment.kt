@@ -3,24 +3,21 @@ package ldp.example.com.android_demo.weatherdemo
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.AsyncTask
-import android.support.v7.widget.LinearLayoutManager
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ldp.base_lib.base.MyBaseFragment
-import ldp.example.com.android_demo.weatherdemo.bean.AddRessBean
 import com.example.ldp.base_lib.http.HttpRequestInfo
 import com.example.ldp.base_lib.http.onHttpResponseListner
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_my_weather.*
 import kotlinx.android.synthetic.main.fragment_choose_city.*
 import ldp.example.com.android_demo.R
 import ldp.example.com.android_demo.constants.Constants
 import ldp.example.com.android_demo.studydemo.utils.SPUtils
+import ldp.example.com.android_demo.weatherdemo.bean.AddRessBean
 import ldp.example.com.android_demo.weatherdemo.bean.ResultBean
 import org.litepal.crud.DataSupport
-import java.lang.Exception
 
 /**
  *  created by Da Peng at 2019/6/25
@@ -44,7 +41,7 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
 //            val type = object : TypeToken<List<ResultBean>>() {}.type
 //            cityList.addAll((Gson().fromJson((SPUtils.get(context, "address", "")).toString(), type)))
             queryProvince()
-            recyclerView.adapter.notifyDataSetChanged()
+            recyclerView.adapter?.notifyDataSetChanged()
         } else {
             startRequestInfo()
         }
@@ -94,7 +91,7 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
                     }
                 }
 
-                recyclerView.adapter.notifyDataSetChanged()
+                (recyclerView.adapter as CityAdapter).notifyDataSetChanged()
                 if (addressLevel == 3) {
                     if (activity is MyWeatherActivity) {
                         val activity = activity as MyWeatherActivity
@@ -141,7 +138,7 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
                 }
             }
             cityList.addAll(list)
-            recyclerView.adapter.notifyDataSetChanged()
+            recyclerView.adapter?.notifyDataSetChanged()
         }
     }
 
@@ -185,7 +182,7 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
 
         override fun onPostExecute(result: Void?) {
             queryProvince()
-            recyclerView.adapter.notifyDataSetChanged()
+            recyclerView.adapter?.notifyDataSetChanged()
             hideProgressDialog()
 //            Html.fromHtml()
         }

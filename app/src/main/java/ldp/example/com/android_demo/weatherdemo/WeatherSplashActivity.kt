@@ -1,8 +1,9 @@
 package ldp.example.com.android_demo.weatherdemo
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ldp.base_lib.utils.SPUtils
 import ldp.example.com.android_demo.R
 

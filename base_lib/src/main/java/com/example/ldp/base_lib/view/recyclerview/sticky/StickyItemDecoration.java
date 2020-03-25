@@ -5,8 +5,8 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;

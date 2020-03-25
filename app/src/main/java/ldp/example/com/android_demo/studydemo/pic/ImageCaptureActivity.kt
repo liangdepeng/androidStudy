@@ -42,12 +42,16 @@ class ImageCaptureActivity : MyBaseActivity() {
         if (requestCode == Picture && resultCode == Activity.RESULT_OK && data != null) {
             val selectImage = data.data
             val filesPathColumns: Array<String> = arrayOf(MediaStore.Images.Media.DATA)
-            val cursor = this.contentResolver.query(selectImage, filesPathColumns, null, null, null)
-            cursor.moveToFirst()
-            val columnIndex = cursor.getColumnIndex(filesPathColumns[0])
-            val url = cursor.getString(columnIndex)
-            cursor.close()
-            x.image().bind(image, url)
+            val cursor = selectImage?.let { this.contentResolver.query(it, filesPathColumns, null, null, null) }
+
+            cursor?.let {
+                cursor.moveToFirst()
+                val columnIndex = cursor.getColumnIndex(filesPathColumns[0])
+                val url = cursor.getString(columnIndex)
+                cursor.close()
+                x.image().bind(image, url)
+            }
+
         }
     }
 }

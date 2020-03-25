@@ -69,7 +69,7 @@ public enum ClassEnum {
     WEATHER_DEMO("天气预报信息（数据库Demo）", WeatherSplashActivity.class, false),
 
     // 简单视频播放器
-    VIDEO_PLAYER("videoPlayer", KotlinVideoPlayerActivity.class, false),
+    VIDEO_PLAYER("videoPlayer(模拟播放器)", KotlinVideoPlayerActivity.class, false),
 
     // liveData+viewModel(Activity)
     LIVE_DATA_ONE("liveData+viewModel(Activity)", LiveDataTestActivity.class, false),

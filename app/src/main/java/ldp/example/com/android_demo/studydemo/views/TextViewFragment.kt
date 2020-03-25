@@ -60,7 +60,7 @@ class TextViewFragment : Fragment(){
     }
 
     private fun addClickPart(str: String): SpannableStringBuilder {
-        val imageSpan = ImageSpan(context, R.drawable.ic_number_of_buyers)
+        val imageSpan = context?.let { ImageSpan(it, R.drawable.ic_number_of_buyers) }
 
         val spanStr = SpannableString("p.")
         spanStr.setSpan(imageSpan, 0, 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
