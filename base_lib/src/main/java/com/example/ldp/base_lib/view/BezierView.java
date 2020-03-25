@@ -25,6 +25,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import com.example.ldp.base_lib.R;
+import com.example.ldp.base_lib.utils.AppUtils;
 
 import java.util.Random;
 import java.util.Timer;
@@ -193,7 +194,7 @@ public class BezierView extends RelativeLayout {
     private AnimatorSet getRunAnimatorSet(final ImageView image) {
         AnimatorSet runSet = new AnimatorSet();
         PointF point0 = new PointF((mWidth-dWidth)/2,mHeight-dHeight); //起始点
-        PointF point3 = new PointF(random.nextInt(getWidth()),0); //终止点
+        PointF point3 = new PointF(random.nextInt(AppUtils.getScreenWidth(getContext())),0); //终止点
         /**
          * 开始执行贝塞尔动画
          */
