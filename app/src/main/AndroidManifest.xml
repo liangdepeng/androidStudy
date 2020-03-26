@@ -89,11 +89,15 @@
         <activity android:name=".livedata.LiveDataTestActivity" />
         <activity android:name=".livedata.FragmentTestActivity" />
         <activity android:name=".studydemo.webview.WebViewActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden">
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait"
+            android:process=":webViewProcess">
         </activity>
         <activity android:name=".studydemo.pic.ImageCaptureActivity" />
         <activity android:name=".studydemo.notification.NotificationActivity" />
-        <activity android:name=".studydemo.webview.HandlerWelcomeActivity"></activity>
+        <activity android:name=".studydemo.webview.HandlerWelcomeActivity"
+>
+        </activity>
         <activity android:name=".service.TestServiceActivity" />
 
         <service

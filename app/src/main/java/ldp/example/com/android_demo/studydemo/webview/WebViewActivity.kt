@@ -17,6 +17,7 @@ import com.example.ldp.base_lib.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_web_view.*
 import ldp.example.com.android_demo.MyApplication
 import ldp.example.com.android_demo.R
+import kotlin.system.exitProcess
 
 
 class WebViewActivity : MyBaseActivity() {
@@ -30,6 +31,7 @@ class WebViewActivity : MyBaseActivity() {
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun initView() {
+        // 解决内存泄漏 动态添加 webView
         webView = WebView(MyApplication.getAppContent())
         val layoutParams = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         frameLayoutShowWeb.addView(webView, layoutParams)
@@ -158,12 +160,16 @@ class WebViewActivity : MyBaseActivity() {
     }
 
     private fun destroyWebView() {
+        // 防止内存泄漏 方法1
         webView.settings.javaScriptEnabled = false
         webView.stopLoading()
         webView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null)
         webView.clearHistory()
         (webView.parent as ViewGroup).removeAllViews()
         webView.destroy()
+
+        // webView被放在了独立进程 ，简单粗暴 ，直接结束进程 但可能涉及到进程间通讯
+        exitProcess(0)
     }
 
     override fun startRequestInfo() {
