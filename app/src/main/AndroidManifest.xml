@@ -114,6 +114,7 @@
         <activity android:name=".studydemo.callphone.MainActivity23"/>
         <activity android:name=".studydemo.dialog.TestPopupDialogActivity" />
         <activity android:name=".studydemo.views.UIActivity" />
+        <activity android:name=".studydemo.broadcast.BroadcastActivity" />
     </application>
 
 </manifest>

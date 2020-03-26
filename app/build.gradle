@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata:2.0.0'
 
     implementation project(path: ':catchcrashlib')
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 }
 repositories {
     mavenCentral()

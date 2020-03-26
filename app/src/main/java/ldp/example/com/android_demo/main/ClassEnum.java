@@ -3,6 +3,7 @@ package ldp.example.com.android_demo.main;
 import ldp.example.com.android_demo.livedata.FragmentTestActivity;
 import ldp.example.com.android_demo.livedata.LiveDataTestActivity;
 import ldp.example.com.android_demo.service.TestServiceActivity;
+import ldp.example.com.android_demo.studydemo.broadcast.BroadcastActivity;
 import ldp.example.com.android_demo.studydemo.callphone.CallphoneActivity;
 import ldp.example.com.android_demo.studydemo.contentprovider.ContentProviderActivity;
 import ldp.example.com.android_demo.studydemo.dialog.DialogsActivity;
@@ -50,6 +51,9 @@ public enum ClassEnum {
 
     //Service
     SERVICE("service", TestServiceActivity.class,false),
+
+    //Broadcast 广播接收器
+    BROADCASTRECEIVER("broadcastReceiver", BroadcastActivity.class,false),
 
     // asyncTask 异步任务
     ASYNC_TASK("asyncTask异步任务", AsyncTaskActivity.class, false),
