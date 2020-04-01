@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".studydemo.webview.HandlerWelcomeActivity">
+    tools:context=".studydemo.yibuxiaoxi.HandlerWelcomeActivity">
 
     <ImageView
         android:id="@+id/image"

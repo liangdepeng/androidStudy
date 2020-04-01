@@ -1,4 +1,4 @@
-package ldp.example.com.android_demo.studydemo.webview
+package ldp.example.com.android_demo.studydemo.yibuxiaoxi
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.example.ldp.base_lib.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_welcome.*
 import ldp.example.com.android_demo.MyApplication
 import ldp.example.com.android_demo.R
+import ldp.example.com.android_demo.studydemo.webview.WebViewActivity
 
 class HandlerWelcomeActivity : AppCompatActivity(), View.OnClickListener {
 

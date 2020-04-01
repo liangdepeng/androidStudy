@@ -17,6 +17,9 @@
     <string name="loading_time">%1$s 秒</string>
     <string name="main_title">标 题</string>
     <string name="movie_list_data">列表数据:</string>
+    <string name="msg_count">消息数量：%d</string>
+    <string name="wait_msg_count">等待执行：%d</string>
+    <string name="finish_msg_count">执行完毕：%d</string>
     <string-array name="definitions">
         <item>标清</item>
         <item>高清</item>

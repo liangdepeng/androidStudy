@@ -15,14 +15,16 @@ import ldp.example.com.android_demo.studydemo.pic.ImageCaptureActivity;
 import ldp.example.com.android_demo.studydemo.qqlogin.QQLogin_Activity;
 import ldp.example.com.android_demo.studydemo.sendmessage.SendMessageActivity;
 import ldp.example.com.android_demo.studydemo.sqllitedemo.SqlActivity;
-import ldp.example.com.android_demo.studydemo.task.AsyncTaskActivity;
-import ldp.example.com.android_demo.studydemo.webview.HandlerWelcomeActivity;
 import ldp.example.com.android_demo.studydemo.webview.WebViewActivity;
 import ldp.example.com.android_demo.studydemo.webview.androidH5Activity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.SharedPreferenceActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteSDfileActivity;
 import ldp.example.com.android_demo.studydemo.xml_.XmlActivity;
+import ldp.example.com.android_demo.studydemo.yibuxiaoxi.AsyncTaskActivity;
+import ldp.example.com.android_demo.studydemo.yibuxiaoxi.HandlerThreadActivity;
+import ldp.example.com.android_demo.studydemo.yibuxiaoxi.HandlerWelcomeActivity;
+import ldp.example.com.android_demo.studydemo.yibuxiaoxi.MyIntentServiceActivity;
 import ldp.example.com.android_demo.studydemo.zidingyikj.circleActivity;
 import ldp.example.com.android_demo.weatherdemo.WeatherSplashActivity;
 
@@ -50,13 +52,19 @@ public enum ClassEnum {
     HANDLER("handler通信", HandlerWelcomeActivity.class, false),
 
     //Service
-    SERVICE("service", TestServiceActivity.class,false),
+    SERVICE("service", TestServiceActivity.class, false),
 
-    //Broadcast 广播接收器
-    BROADCASTRECEIVER("broadcastReceiver", BroadcastActivity.class,false),
+    // Broadcast 广播接收器
+    BROADCASTRECEIVER("broadcastReceiver", BroadcastActivity.class, false),
 
     // asyncTask 异步任务
     ASYNC_TASK("asyncTask异步任务", AsyncTaskActivity.class, false),
+
+    // handlerThread 工作线程+handler
+    HANDLER_THREAD("handlerThread", HandlerThreadActivity.class, false),
+
+    //IntentService
+    INTENT_SERVICE("intentService", MyIntentServiceActivity.class, false),
 
     // SQLite数据库
     SQ_LITE("SQLite", SqlActivity.class, false),

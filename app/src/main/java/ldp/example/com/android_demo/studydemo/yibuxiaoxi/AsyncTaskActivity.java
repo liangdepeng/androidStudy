@@ -1,5 +1,6 @@
-package ldp.example.com.android_demo.studydemo.task;
+package ldp.example.com.android_demo.studydemo.yibuxiaoxi;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ldp.base_lib.utils.AppUtils;
 import com.example.ldp.base_lib.utils.LogUtils;
+
+import java.lang.ref.WeakReference;
 
 import ldp.example.com.android_demo.R;
 
@@ -31,6 +34,12 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mAsyncTaskTest.cancel(true);
+    }
+
     private void initView() {
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mProgressBar2 = (ProgressBar) findViewById(R.id.progressBar2);
@@ -48,29 +57,47 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.start:
-                mAsyncTaskTest = new AsyncTaskTest();
+                mAsyncTaskTest = new AsyncTaskTest(AsyncTaskActivity.this);
                 mAsyncTaskTest.execute();
                 break;
             case R.id.cancel:
-                mAsyncTaskTest.cancel(true);
+                if (mAsyncTaskTest != null)
+                    mAsyncTaskTest.cancel(true);
                 break;
             default:
                 break;
         }
     }
 
-    public class AsyncTaskTest extends AsyncTask<String, Integer, String> {
+    /**
+     * 静态内部类 + 弱引用Activity
+     */
+    static class AsyncTaskTest extends AsyncTask<String, Integer, String> {
 
-        @Override
-        protected void onPreExecute() {
-            LogUtils.d("async","onPreExecute"+AppUtils.getThreadInfo());
-            mProgressBar2.setProgress(0);
-            mTextView.setText("准备开始...");
+        private WeakReference<Activity> activityWeakReference;
+
+        AsyncTaskTest(Activity activity) {
+            activityWeakReference = new WeakReference<Activity>(activity);
+        }
+
+        private AsyncTaskActivity getActivity() {
+            AsyncTaskActivity asyncTaskActivity;
+            asyncTaskActivity = (AsyncTaskActivity) activityWeakReference.get();
+            return asyncTaskActivity;
         }
 
         @Override
+        protected void onPreExecute() {
+            LogUtils.d("async", "onPreExecute" + AppUtils.getThreadInfo());
+            if (getActivity() != null) {
+                getActivity().taskStart();
+            }
+        }
+
+
+        @Override
         protected String doInBackground(String... voids) {
-            LogUtils.d("async","doInBackground"+AppUtils.getThreadInfo());
+            LogUtils.d("async", "doInBackground" + AppUtils.getThreadInfo());
 
             int progress = 0;
 
@@ -78,7 +105,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
                 for (int i = 0; i < 100; i++) {
                     progress++;
                     publishProgress(progress);
-                    Thread.sleep(50);
+                    Thread.sleep(100);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -90,22 +117,47 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            mProgressBar2.setProgress(values[0]);
-            mTextView.setText("Loading..." + values[0] + " %");
+            if (getActivity() != null) {
+                getActivity().progressUpdate(values[0]);
+            }
         }
 
         @Override
         protected void onPostExecute(String aVoid) {
-            LogUtils.d("async","onPostExecute"+AppUtils.getThreadInfo());
-            mTextView.setText("完成");
+            LogUtils.d("async", "onPostExecute" + AppUtils.getThreadInfo());
+            if (getActivity() != null) {
+                getActivity().postResultFinish();
+            }
+
         }
 
         @Override
         protected void onCancelled() {
-            LogUtils.d("async","onCancelled"+AppUtils.getThreadInfo());
+            LogUtils.d("async", "onCancelled" + AppUtils.getThreadInfo());
             super.onCancelled();
-            mTextView.setText("已取消");
-            mProgressBar2.setProgress(0);
+            if (getActivity() != null) {
+                getActivity().taskCancel();
+            }
+
         }
+    }
+
+    private void taskCancel() {
+        mTextView.setText("已取消");
+        mProgressBar2.setProgress(0);
+    }
+
+    private void postResultFinish() {
+        mTextView.setText("完成");
+    }
+
+    private void progressUpdate(Integer value) {
+        mProgressBar2.setProgress(value);
+        mTextView.setText("Loading..." + value + " %");
+    }
+
+    private void taskStart() {
+        mProgressBar2.setProgress(0);
+        mTextView.setText("准备开始...");
     }
 }

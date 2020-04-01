@@ -65,7 +65,7 @@
             android:name=".studydemo.callphone.DialogActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".studydemo.dialog.DialogsActivity" />
-        <activity android:name=".studydemo.task.AsyncTaskActivity" />
+        <activity android:name=".studydemo.yibuxiaoxi.AsyncTaskActivity" />
         <activity android:name=".studydemo.http.HttpActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
@@ -95,7 +95,7 @@
         </activity>
         <activity android:name=".studydemo.pic.ImageCaptureActivity" />
         <activity android:name=".studydemo.notification.NotificationActivity" />
-        <activity android:name=".studydemo.webview.HandlerWelcomeActivity"
+        <activity android:name=".studydemo.yibuxiaoxi.HandlerWelcomeActivity"
 >
         </activity>
         <activity android:name=".service.TestServiceActivity" />
@@ -105,6 +105,7 @@
             android:enabled="true"
             android:exported="true" />
         <service android:name=".service.TestBindService" />
+        <service android:name=".studydemo.yibuxiaoxi.MyIntentService" />
 
         <activity android:name=".main.MainActivity2">
             <intent-filter>
@@ -119,6 +120,8 @@
         <activity android:name=".studydemo.dialog.TestPopupDialogActivity" />
         <activity android:name=".studydemo.views.UIActivity" />
         <activity android:name=".studydemo.broadcast.BroadcastActivity" />
+        <activity android:name=".studydemo.yibuxiaoxi.HandlerThreadActivity" />
+        <activity android:name=".studydemo.yibuxiaoxi.MyIntentServiceActivity" />
     </application>
 
 </manifest>
