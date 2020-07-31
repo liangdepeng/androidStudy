@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.ldp.base_lib.utils.LogUtils;
 import com.example.ldp.base_lib.view.BezierView;
 import com.example.ldp.base_lib.view.SameImagesView;
+import com.example.ui_base_lib.BaseButton;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -30,7 +31,7 @@ public class CallphonePermissionActivity extends BasePermissionActivity {
     @ViewInject(R.id.phone_number)
     private EditText number;
     @ViewInject(R.id.dialog)
-    private Button btnDialog;
+    private BaseButton btnDialog;
     @ViewInject(R.id.sameImagines)
     private SameImagesView mSameImagesView;
     @ViewInject(R.id.testSameImagesView)

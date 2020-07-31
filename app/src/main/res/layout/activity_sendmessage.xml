@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="6dp">
+    android:layout_margin="6dp"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="     发送短信     "
         android:layout_marginTop="20dp"
-        android:textColor="#000"/>
+        android:text="     发送短信     "
+        android:textColor="#000" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,16 +24,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="电话号码"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <EditText
             android:id="@+id/phone_num"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="请输入您的联系人号码"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="请输入您的联系人号码" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,33 +47,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="短信内容"
-            android:textColor="#000"
-            />
+            android:textColor="#000" />
+
         <EditText
             android:id="@+id/send_messages"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="请输入短信内容"
             android:inputType="textMultiLine"
-            android:lines="2"
-            android:hint="请输入短信内容" />
+            android:lines="2" />
 
     </LinearLayout>
 
 
     <Button
         android:id="@+id/btn_send"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="发送"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        android:text="发送" />
 
     <ProgressBar
         android:id="@+id/s_progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <com.example.ldp.base_lib.view.PassWordKuangView
+        android:layout_width="match_parent"
+        app:pivPasswordLength="6"
+        android:layout_height="50dp"/>
 </LinearLayout>

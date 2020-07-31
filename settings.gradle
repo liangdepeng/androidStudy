@@ -1,1 +1,2 @@
 include ':app', ':base_lib', ':catchcrashlib'
+include ':ui_base_lib'

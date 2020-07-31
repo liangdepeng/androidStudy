@@ -245,17 +245,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
     public static void main(String[] args) {
 
         System.out.println(2L);
 
-        int num = 2147483647 ;
-        long temp = num + 2L ;
-        System.out.println(temp) ;
+        int num = 2147483647;
+        long temp = num + 2L;
+        System.out.println(temp);
 
 
-        int num2 = 2147483647 ;
-        num2 += 2L ;
-        System.out.println(num2) ;
+        int num2 = 2147483647;
+        num2 += 2L;
+        System.out.println(num2);
     }
 }
