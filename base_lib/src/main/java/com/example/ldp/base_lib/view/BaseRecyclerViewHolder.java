@@ -17,11 +17,11 @@ import com.bumptech.glide.request.RequestOptions;
 /**
  * created by Da Peng at 2019/7/30
  */
-public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
+public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     private SparseArray<View> mViewSparseArray;
 
-    public MyRecyclerViewViewHolder(View itemView) {
+    public BaseRecyclerViewHolder(View itemView) {
         super(itemView);
         mViewSparseArray = new SparseArray<>();
     }
@@ -46,19 +46,19 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * @attr ref android.R.styleable#TextView_text
      * setText(CharSequence)
      */
-    public MyRecyclerViewViewHolder setText(int viewId, @StringRes int stringResId) {
+    public BaseRecyclerViewHolder setText(int viewId, @StringRes int stringResId) {
         return setText(viewId, null, stringResId, -1);
     }
 
-    public MyRecyclerViewViewHolder setText(int viewId, CharSequence text) {
+    public BaseRecyclerViewHolder setText(int viewId, CharSequence text) {
         return setText(viewId, text, -1);
     }
 
-    public MyRecyclerViewViewHolder setText(int viewId, CharSequence text, int colorId) {
+    public BaseRecyclerViewHolder setText(int viewId, CharSequence text, int colorId) {
         return setText(viewId, text, -1, colorId);
     }
 
-    private MyRecyclerViewViewHolder setText(int viewId, CharSequence text, @StringRes int stringResId, int colorId) {
+    private BaseRecyclerViewHolder setText(int viewId, CharSequence text, @StringRes int stringResId, int colorId) {
         TextView textView = getView(viewId);
         if (text != null) {
             textView.setText(text);
@@ -72,7 +72,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
-    public MyRecyclerViewViewHolder setTextColor(int viewId, int colorId) {
+    public BaseRecyclerViewHolder setTextColor(int viewId, int colorId) {
         TextView textView = getView(viewId);
         textView.setTextColor(colorId);
         return this;
@@ -85,7 +85,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      *
      * @see android.view.Gravity
      */
-    public MyRecyclerViewViewHolder setTextGravity(int viewId, int gravity) {
+    public BaseRecyclerViewHolder setTextGravity(int viewId, int gravity) {
         TextView textView = getView(viewId);
         textView.setGravity(gravity);
         return this;
@@ -95,7 +95,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * Register a callback to be invoked when this view is clicked. If this view is not
      * clickable, it becomes clickable.
      */
-    public MyRecyclerViewViewHolder setOnClickListener(int viewId, View.OnClickListener onClickListener) {
+    public BaseRecyclerViewHolder setOnClickListener(int viewId, View.OnClickListener onClickListener) {
         if (onClickListener != null) {
             View view = getView(viewId);
             view.setOnClickListener(onClickListener);
@@ -107,7 +107,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * Register a callback to be invoked when this view is clicked and held. If this view is not
      * long clickable, it becomes long clickable.
      */
-    public MyRecyclerViewViewHolder setOnLongClickListener(int viewId, View.OnLongClickListener onLongClickListener) {
+    public BaseRecyclerViewHolder setOnLongClickListener(int viewId, View.OnLongClickListener onLongClickListener) {
         if (onLongClickListener != null) {
             View view = getView(viewId);
             view.setOnLongClickListener(onLongClickListener);
@@ -118,13 +118,13 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
     /**
      * Sets a drawable as the content of this ImageView.
      */
-    public MyRecyclerViewViewHolder setImagineLocalRes(int viewId, int resId) {
+    public BaseRecyclerViewHolder setImagineLocalRes(int viewId, int resId) {
         ImageView view = getView(viewId);
         view.setImageResource(resId);
         return this;
     }
 
-    public MyRecyclerViewViewHolder setImagineDrawable(int viewId, Drawable drawable) {
+    public BaseRecyclerViewHolder setImagineDrawable(int viewId, Drawable drawable) {
         ImageView image = getView(viewId);
         image.setImageDrawable(drawable);
         return this;
@@ -137,7 +137,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * @param resId The identifier of the resource.
      * @attr ref android.R.styleable#View_background
      */
-    public MyRecyclerViewViewHolder setViewBackgroundRes(int viewId, int resId) {
+    public BaseRecyclerViewHolder setViewBackgroundRes(int viewId, int resId) {
         View view = getView(viewId);
         view.setBackgroundResource(resId);
         return this;
@@ -150,7 +150,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * @param background background
      * @return MyRecyclerViewViewHolder
      */
-    public MyRecyclerViewViewHolder setViewBackgroundDrawable(int viewId, Drawable background) {
+    public BaseRecyclerViewHolder setViewBackgroundDrawable(int viewId, Drawable background) {
         View view = getView(viewId);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             view.setBackground(background);
@@ -165,7 +165,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * @param alpha  0 ~ 255
      * @return this
      */
-    public MyRecyclerViewViewHolder setImagineAlpha(int viewId, int alpha) {
+    public BaseRecyclerViewHolder setImagineAlpha(int viewId, int alpha) {
         ImageView imageView = getView(viewId);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             imageView.setImageAlpha(alpha);
@@ -181,7 +181,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * <p>
      * setting alpha to a translucent value (0 < alpha < 1)
      */
-    public MyRecyclerViewViewHolder setViewAlpha(int viewId, float alpha) {
+    public BaseRecyclerViewHolder setViewAlpha(int viewId, float alpha) {
         View view = getView(viewId);
         view.setAlpha(alpha);
         return this;
@@ -193,7 +193,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      * @param visibility One of {VISIBLE}, {INVISIBLE}, or {GONE}.
      * @attr ref android.R.styleable#View_visibility
      */
-    public MyRecyclerViewViewHolder setViewVisibility(int viewId, int visibility) {
+    public BaseRecyclerViewHolder setViewVisibility(int viewId, int visibility) {
         View view = getView(viewId);
         view.setVisibility(visibility);
         return this;
@@ -204,7 +204,7 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      *
      * @param colorId the color of the background
      */
-    public MyRecyclerViewViewHolder setViewBackgroundColor(int viewId, int colorId) {
+    public BaseRecyclerViewHolder setViewBackgroundColor(int viewId, int colorId) {
         View view = getView(viewId);
         view.setBackgroundColor(colorId);
         return this;
@@ -216,13 +216,13 @@ public class MyRecyclerViewViewHolder extends RecyclerView.ViewHolder {
      *
      * @param isEnabled True if this view is enabled, false otherwise.
      */
-    public MyRecyclerViewViewHolder setViewEnabled(int viewId, boolean isEnabled) {
+    public BaseRecyclerViewHolder setViewEnabled(int viewId, boolean isEnabled) {
         View view = getView(viewId);
         view.setEnabled(isEnabled);
         return this;
     }
 
-    public MyRecyclerViewViewHolder setImagineByNetUrl(Context context, int viewId, String netResUrl, int placeholder) {
+    public BaseRecyclerViewHolder setImagineByNetUrl(Context context, int viewId, String netResUrl, int placeholder) {
         ImageView imageView = getView(viewId);
         glideToImagine(context, imageView, netResUrl, placeholder);
         return this;

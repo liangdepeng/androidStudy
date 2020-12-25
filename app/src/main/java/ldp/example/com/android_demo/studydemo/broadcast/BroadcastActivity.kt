@@ -4,12 +4,12 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.example.catchcrashlib.BaseActivity
 import kotlinx.android.synthetic.main.activity_broadcast.*
 import ldp.example.com.android_demo.R
 
-class BroadcastActivity : BaseActivity() {
+class BroadcastActivity : AppCompatActivity() {
 
     private val myReceiver = MyReceiver()
     private val myReceiver2 = MyReceiver()

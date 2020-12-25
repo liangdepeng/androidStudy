@@ -1,4 +1,4 @@
-package ldp.example.com.android_demo.studydemo.utils;
+package com.example.ldp.base_lib.base;
 
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -17,7 +17,7 @@ import androidx.core.app.ActivityCompat;
  * @updateAuthor $Author$
  * @updateDes ${TODO}
  */
-public class BaseActivity extends AppCompatActivity {
+public class BasePermissionActivity extends BaseActivity {
     //**************** Android M Permission (Android 6.0权限控制代码封装)
     private int permissionRequestCode = 88;
     private PermissionCallback permissionRunnable;
@@ -90,13 +90,13 @@ public class BaseActivity extends AppCompatActivity {
                     .setPositiveButton("授权", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(BaseActivity.this, permissions, requestCode);
+                            ActivityCompat.requestPermissions(BasePermissionActivity.this, permissions, requestCode);
                         }
                     }).show();
 
         } else {
             // Contact permissions have not been granted yet. Request them directly.
-            ActivityCompat.requestPermissions(BaseActivity.this, permissions, requestCode);
+            ActivityCompat.requestPermissions(BasePermissionActivity.this, permissions, requestCode);
         }
     }
 

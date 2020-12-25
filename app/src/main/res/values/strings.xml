@@ -20,6 +20,8 @@
     <string name="msg_count">消息数量：%d</string>
     <string name="wait_msg_count">等待执行：%d</string>
     <string name="finish_msg_count">执行完毕：%d</string>
+    <string name="null_point_exception_txt">空指针 NullPointException</string>
+    <string name="index_out_of_bounds_exception">数组越界 IndexOutOfBoundsException</string>
     <string-array name="definitions">
         <item>标清</item>
         <item>高清</item>

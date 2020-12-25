@@ -13,7 +13,7 @@ import com.example.ldp.base_lib.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_welcome.*
 import ldp.example.com.android_demo.MyApplication
 import ldp.example.com.android_demo.R
-import ldp.example.com.android_demo.studydemo.webview.WebViewActivity
+import ldp.example.com.android_demo.studydemo.webview.WebViewMvpActivity
 
 class HandlerWelcomeActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -65,7 +65,7 @@ class HandlerWelcomeActivity : AppCompatActivity(), View.OnClickListener {
                     loadingTime--
                     msg.target.removeMessages(TAG)
                     if (loadingTime < 0) {
-                        startActivity(Intent(this@HandlerWelcomeActivity, WebViewActivity::class.java))
+                        startActivity(Intent(this@HandlerWelcomeActivity, WebViewMvpActivity::class.java))
                         finish()
                     } else {
                         msg.target.sendEmptyMessageDelayed(TAG, 1_000)
@@ -122,7 +122,7 @@ class HandlerWelcomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        startActivity(Intent(this@HandlerWelcomeActivity, WebViewActivity::class.java))
+        startActivity(Intent(this@HandlerWelcomeActivity, WebViewMvpActivity::class.java))
         finish()
     }
 

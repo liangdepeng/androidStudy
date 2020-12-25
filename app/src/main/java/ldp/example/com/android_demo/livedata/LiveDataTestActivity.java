@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.ldp.base_lib.base.BaseActivity;
 import com.example.ldp.base_lib.bean.WeatherBean;
 import com.example.ldp.base_lib.utils.LogUtils;
 
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 import ldp.example.com.android_demo.R;
 
-public class LiveDataTestActivity extends AppCompatActivity {
+public class LiveDataTestActivity extends BaseActivity {
 
     private static final String TAG = "TAG";
     private TestViewModel mTestViewModel;

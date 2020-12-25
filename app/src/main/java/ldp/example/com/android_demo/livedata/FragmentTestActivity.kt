@@ -2,12 +2,12 @@ package ldp.example.com.android_demo.livedata
 
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.example.ldp.base_lib.base.BaseActivity
 import ldp.example.com.android_demo.R
-import ldp.example.com.android_demo.livedata.fragment.LiveDataFragmentOne
-import ldp.example.com.android_demo.livedata.fragment.LiveDataFragmentTwo
+import ldp.example.com.android_demo.livedata.fragment.LiveDataMvpFragmentOne
+import ldp.example.com.android_demo.livedata.fragment.LiveDataMvpFragmentTwo
 
-class FragmentTestActivity : AppCompatActivity() {
+class FragmentTestActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +18,8 @@ class FragmentTestActivity : AppCompatActivity() {
     private fun initView() {
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.frameLayout1,LiveDataFragmentOne())
-        transaction.replace(R.id.frameLayout2,LiveDataFragmentTwo())
+        transaction.replace(R.id.frameLayout1,LiveDataMvpFragmentOne())
+        transaction.replace(R.id.frameLayout2,LiveDataMvpFragmentTwo())
         transaction.commit()
     }
 

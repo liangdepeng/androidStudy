@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".studydemo.webview.WebViewActivity">
+    tools:context=".studydemo.webview.WebViewMvpActivity">
 
     <LinearLayout
         android:layout_margin="5dp"

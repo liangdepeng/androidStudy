@@ -17,12 +17,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import ldp.example.com.android_demo.R;
-import ldp.example.com.android_demo.studydemo.utils.BaseActivity;
+import com.example.ldp.base_lib.base.BasePermissionActivity;
 
 /**
  * created by ldp at 2018/8/10
  */
-public class WriteSDfileActivity extends BaseActivity implements View.OnClickListener {
+public class WriteSDfilePermissionActivity extends BasePermissionActivity implements View.OnClickListener {
 
     @ViewInject(R.id.nei_txt)
     private TextView nei_txt;
@@ -72,25 +72,25 @@ public class WriteSDfileActivity extends BaseActivity implements View.OnClickLis
                                     fos.write(bytes);
                                 }
                                 fos.close();
-                                Toast.makeText(WriteSDfileActivity.this,
+                                Toast.makeText(WriteSDfilePermissionActivity.this,
                                         "写入文件完成", Toast.LENGTH_SHORT).show();
                                 btn_del_sd.setEnabled(true);
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         } else {
-                            Toast.makeText(WriteSDfileActivity.this,
+                            Toast.makeText(WriteSDfilePermissionActivity.this,
                                     "sd卡空间不足", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(WriteSDfileActivity.this,
+                        Toast.makeText(WriteSDfilePermissionActivity.this,
                                 "sd卡被拔出或者没有挂载", Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
                 public void noPermission() {
-                    Toast.makeText(WriteSDfileActivity.this,
+                    Toast.makeText(WriteSDfilePermissionActivity.this,
                             "没有相关权限", Toast.LENGTH_SHORT).show();
                 }
             }, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -99,9 +99,9 @@ public class WriteSDfileActivity extends BaseActivity implements View.OnClickLis
             File file = new File(Environment.getExternalStorageDirectory(), "Test_test.3gp");
             if (file.exists()){
                 file.delete();
-                Toast.makeText(WriteSDfileActivity.this,"文件删除成功",Toast.LENGTH_SHORT).show();
+                Toast.makeText(WriteSDfilePermissionActivity.this,"文件删除成功",Toast.LENGTH_SHORT).show();
             }else {
-                Toast.makeText(WriteSDfileActivity.this,"文件不存在",Toast.LENGTH_SHORT).show();
+                Toast.makeText(WriteSDfilePermissionActivity.this,"文件不存在",Toast.LENGTH_SHORT).show();
             }
         }
     }

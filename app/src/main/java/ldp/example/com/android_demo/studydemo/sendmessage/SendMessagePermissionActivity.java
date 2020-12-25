@@ -15,12 +15,12 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import ldp.example.com.android_demo.R;
-import ldp.example.com.android_demo.studydemo.utils.BaseActivity;
+import com.example.ldp.base_lib.base.BasePermissionActivity;
 
 /**
  * created by ldp at 2018/8/3
  */
-public class SendMessageActivity extends BaseActivity {
+public class SendMessagePermissionActivity extends BasePermissionActivity {
 
     @ViewInject(R.id.phone_num)
     private EditText phone_number;
@@ -59,7 +59,7 @@ public class SendMessageActivity extends BaseActivity {
             mPhone = phone_number.getText().toString().trim();
             mMessages = send_message.getText().toString().trim();
             if ("".equals(mMessages) || "".equals(mPhone)) {
-                Toast.makeText(SendMessageActivity.this, "电话号码或短信内容不能为空", Toast.LENGTH_LONG).show();
+                Toast.makeText(SendMessagePermissionActivity.this, "电话号码或短信内容不能为空", Toast.LENGTH_LONG).show();
             } else {
                 performCodeWithPermission("发送短信权限", new PermissionCallback() {
                     @Override

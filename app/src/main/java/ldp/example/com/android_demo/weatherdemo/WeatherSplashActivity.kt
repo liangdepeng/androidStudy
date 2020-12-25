@@ -13,13 +13,13 @@ class WeatherSplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         if (SPUtils.get(this, "address", "") != "") {
-            startActivity(Intent(this, MyWeatherActivity::class.java)
+            startActivity(Intent(this, WeatherMvpActivity::class.java)
                     .putExtra("city", "杭州"))
             finish()
         } else {
             val manager = supportFragmentManager
             val transaction = manager.beginTransaction()
-            transaction.replace(R.id.splash, CityFragment())
+            transaction.replace(R.id.splash, CityMvpFragment())
             transaction.commit()
         }
     }

@@ -12,14 +12,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main2.*
 import ldp.example.com.android_demo.R
+import com.example.ldp.base_lib.base.BasePermissionActivity
 
 
-class MainActivity2 : AppCompatActivity() {
+class MainPermissionActivity2 : BasePermissionActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,7 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private fun initView(list: ArrayList<ClassesBean>) {
-        main_recycler.layoutManager = LinearLayoutManager(this@MainActivity2)
+        main_recycler.layoutManager = LinearLayoutManager(this@MainPermissionActivity2)
         main_recycler.addItemDecoration(MyItemDecoration())
         val adapter = MyAdapter(this)
         adapter.setData(list)

@@ -2,7 +2,7 @@ package ldp.example.com.android_demo.weatherdemo
 
 import android.os.Bundle
 import android.view.View
-import com.example.ldp.base_lib.base.MyBaseActivity
+import com.example.ldp.base_lib.base.BaseMvpActivity
 import com.example.ldp.base_lib.http.HttpRequestInfo
 import com.example.ldp.base_lib.http.onHttpResponseListner
 import com.example.ldp.base_lib.utils.LogUtils
@@ -15,7 +15,7 @@ import com.example.ldp.base_lib.bean.WeatherBean
 import ldp.example.com.android_demo.weatherdemo.bean.ResultBean
 import java.lang.Exception
 
-class MyWeatherActivity : MyBaseActivity(),
+class WeatherMvpActivity : BaseMvpActivity(),
         onHttpResponseListner, View.OnClickListener {
 
     var httpInfo: HttpRequestInfo? = HttpRequestInfo(this)

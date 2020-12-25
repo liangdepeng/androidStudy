@@ -6,7 +6,7 @@ import android.os.AsyncTask
 import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ldp.base_lib.base.MyBaseFragment
+import com.example.ldp.base_lib.base.BaseMvpFragment
 import com.example.ldp.base_lib.http.HttpRequestInfo
 import com.example.ldp.base_lib.http.onHttpResponseListner
 import com.google.gson.Gson
@@ -22,7 +22,7 @@ import org.litepal.crud.DataSupport
 /**
  *  created by Da Peng at 2019/6/25
  */
-class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListener {
+class CityMvpFragment : BaseMvpFragment(), onHttpResponseListner, View.OnClickListener {
 
     private var httpRequestInfo: HttpRequestInfo? = null
     var cityList = arrayListOf<ResultBean>()
@@ -93,8 +93,8 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
 
                 (recyclerView.adapter as CityAdapter).notifyDataSetChanged()
                 if (addressLevel == 3) {
-                    if (activity is MyWeatherActivity) {
-                        val activity = activity as MyWeatherActivity
+                    if (activity is WeatherMvpActivity) {
+                        val activity = activity as WeatherMvpActivity
                         activity.drawerLayout.closeDrawers()
                         activity.requestWeatherData(str!!)
                         if (isZhiXiaShi) {
@@ -104,7 +104,7 @@ class CityFragment : MyBaseFragment(), onHttpResponseListner, View.OnClickListen
                             addressLevel = 2
                         }
                     } else {
-                        startActivity(Intent(context, MyWeatherActivity::class.java).putExtra("city", str))
+                        startActivity(Intent(context, WeatherMvpActivity::class.java).putExtra("city", str))
                     }
                 }
             }

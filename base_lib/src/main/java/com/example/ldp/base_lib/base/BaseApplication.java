@@ -16,6 +16,11 @@ public abstract class BaseApplication extends Application {
         context = getApplicationContext();
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+    }
+
     public static Context getAppContent(){
         return context;
     }

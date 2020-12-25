@@ -4,12 +4,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.ldp.base_lib.base.MyBaseActivity;
+import com.example.ldp.base_lib.base.BaseMvpActivity;
 import com.example.ldp.base_lib.base.ViewHolder;
 
 import ldp.example.com.android_demo.R;
 
-public class DialogActivity extends MyBaseActivity {
+public class DialogMvpActivity extends BaseMvpActivity {
 
     /**
      * 测试 {@link ViewHolder}

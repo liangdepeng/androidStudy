@@ -13,9 +13,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import ldp.example.com.android_demo.R;
-import ldp.example.com.android_demo.studydemo.utils.BaseActivity;
+import com.example.ldp.base_lib.base.BasePermissionActivity;
 
-public class ContentProviderActivity extends BaseActivity implements View.OnClickListener {
+public class ContentProviderPermissionActivity extends BasePermissionActivity implements View.OnClickListener {
 
     private EditText etCname;
     private EditText etCnumber;
@@ -57,7 +57,7 @@ public class ContentProviderActivity extends BaseActivity implements View.OnClic
             String phone = etCnumber.getText().toString().trim();
             String email = etEmail.getText().toString().trim();
             if (TextUtils.isEmpty(name)) {
-                Toast.makeText(ContentProviderActivity.this, "姓名不能为空", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContentProviderPermissionActivity.this, "姓名不能为空", Toast.LENGTH_SHORT).show();
             }else{
                 // 在 raw_contact表添加联系人
                 ContentResolver resolver = this.getContentResolver();
@@ -90,7 +90,7 @@ public class ContentProviderActivity extends BaseActivity implements View.OnClic
                 emailvalues.put("mimetype", "vnd.android.cursor.item/email_v2");
                 resolver.insert(datauri, emailvalues);
 
-                Toast.makeText(ContentProviderActivity.this, "联系人添加完成", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContentProviderPermissionActivity.this, "联系人添加完成", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -108,7 +108,7 @@ public class ContentProviderActivity extends BaseActivity implements View.OnClic
 
             @Override
             public void noPermission() {
-                Toast.makeText(ContentProviderActivity.this, "没有相关权限", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContentProviderPermissionActivity.this, "没有相关权限", Toast.LENGTH_SHORT).show();
             }
         }, Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CONTACTS);
     }

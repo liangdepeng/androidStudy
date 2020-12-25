@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.ldp.base_lib.base.MyBaseActivity;
+import com.example.ldp.base_lib.base.BaseMvpActivity;
 import com.example.ldp.base_lib.bean.WeatherBean;
 
 import ldp.example.com.android_demo.R;
@@ -15,7 +15,7 @@ import static ldp.example.com.android_demo.constants.Constants.WEATHER_URL;
 /**
  * @author ldp
  */
-public class MyIntentServiceActivity extends MyBaseActivity {
+public class IntentServiceMvpActivity extends BaseMvpActivity {
 
     @Override
     protected void initView() {
@@ -24,7 +24,7 @@ public class MyIntentServiceActivity extends MyBaseActivity {
             @Override
             public void onClick(View v) {
                 showProgressDialog();
-                Intent intent = new Intent(MyIntentServiceActivity.this, MyIntentService.class);
+                Intent intent = new Intent(IntentServiceMvpActivity.this, MyIntentService.class);
                 intent.putExtra("url", WEATHER_URL + "重庆");
                 startService(intent);
             }
@@ -34,7 +34,7 @@ public class MyIntentServiceActivity extends MyBaseActivity {
             public void onClick(View v) {
                 showProgressDialog();
                 for (int i = 0; i < 10; i++) {
-                    Intent intent = new Intent(MyIntentServiceActivity.this, MyIntentService.class);
+                    Intent intent = new Intent(IntentServiceMvpActivity.this, MyIntentService.class);
                     intent.putExtra("url", WEATHER_URL + "重庆");
                     startService(intent);
                 }

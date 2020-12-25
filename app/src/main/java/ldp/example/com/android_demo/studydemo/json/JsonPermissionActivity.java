@@ -18,9 +18,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import ldp.example.com.android_demo.R;
-import ldp.example.com.android_demo.studydemo.utils.BaseActivity;
+import com.example.ldp.base_lib.base.BasePermissionActivity;
 
-public class JsonActivity extends BaseActivity {
+public class JsonPermissionActivity extends BasePermissionActivity {
 
     private TextView mCreateJson_txt;
     private TextView mAnalysisJson_txt;

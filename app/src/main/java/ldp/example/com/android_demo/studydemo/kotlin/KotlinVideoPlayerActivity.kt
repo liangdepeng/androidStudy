@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ldp.base_lib.utils.LogUtils
-import com.example.ldp.base_lib.view.MyRecyclerViewViewHolder
+import com.example.ldp.base_lib.view.BaseRecyclerViewHolder
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_kotlin.*
 import ldp.example.com.android_demo.R
@@ -164,18 +164,18 @@ class KotlinVideoPlayerActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    class MyListAdapter2(var context: Context, var list: ArrayList<TestBean.TrailersBean>) : RecyclerView.Adapter<MyRecyclerViewViewHolder>() {
+    class MyListAdapter2(var context: Context, var list: ArrayList<TestBean.TrailersBean>) : RecyclerView.Adapter<BaseRecyclerViewHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRecyclerViewViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseRecyclerViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_test, parent, false)
-            return MyRecyclerViewViewHolder(view)
+            return BaseRecyclerViewHolder(view)
         }
 
         override fun getItemCount(): Int {
             return list.size
         }
 
-        override fun onBindViewHolder(holder: MyRecyclerViewViewHolder, position: Int) {
+        override fun onBindViewHolder(holder: BaseRecyclerViewHolder, position: Int) {
             val bean = list[position]
             holder.setText(R.id.txt,bean.movieName)
             //holder.txt.text = bean.movieName

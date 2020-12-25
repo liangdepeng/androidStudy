@@ -1,5 +1,8 @@
 package ldp.example.com.android_demo;
 
+import android.content.Context;
+
+import com.example.catchcrashlib.ExceptionCrashHandler;
 import com.example.ldp.base_lib.base.BaseApplication;
 import com.example.ldp.base_lib.utils.LogUtils;
 
@@ -17,6 +20,7 @@ public class MyApplication extends BaseApplication {
         init();
     }
 
+
     private void init() {
         x.Ext.init(this);
         //输出debug日志，开启会影响性能
@@ -24,6 +28,6 @@ public class MyApplication extends BaseApplication {
         LitePal.initialize(this);
         LogUtils.setDebug(true);
         // 全局异常拦截
-       // ExceptionCrashHandler.getInstance().initInterceptCrash(getApplicationContext());
+        ExceptionCrashHandler.getInstance().initInterceptCrash(getApplicationContext());
     }
 }

@@ -59,9 +59,9 @@ public class SwipeRefreshRecyclerView extends FrameLayout implements SwipeRefres
      * @param context content
      */
     private void initView(Context context) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recycler_swiperefresh_view, null, false);
-        mSwipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
-        mRecyclerView = view.findViewById(R.id.recyclerView);
+        LayoutInflater.from(context).inflate(R.layout.recycler_swiperefresh_view, this, true);
+        mSwipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
+        mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setOverScrollMode(OVER_SCROLL_IF_CONTENT_SCROLLS);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

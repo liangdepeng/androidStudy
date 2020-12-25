@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 /**
  * created by Da Peng at 2019/6/21
  */
-public abstract class MyBaseFragment extends Fragment implements MyBaseView {
+public abstract class BaseMvpFragment extends Fragment implements IBaseView {
 
     private ProgressDialog mProgressDialog;
 

@@ -14,19 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-import ldp.example.com.android_demo.studydemo.callphone.CallphoneActivity;
-import ldp.example.com.android_demo.studydemo.contentprovider.ContentProviderActivity;
+import ldp.example.com.android_demo.studydemo.callphone.CallphonePermissionActivity;
+import ldp.example.com.android_demo.studydemo.contentprovider.ContentProviderPermissionActivity;
 import ldp.example.com.android_demo.studydemo.dialog.DialogsActivity;
 import ldp.example.com.android_demo.studydemo.http.HttpActivity;
-import ldp.example.com.android_demo.studydemo.json.JsonActivity;
+import ldp.example.com.android_demo.studydemo.json.JsonPermissionActivity;
 import ldp.example.com.android_demo.studydemo.kotlin.KotlinVideoPlayerActivity;
 import ldp.example.com.android_demo.studydemo.qqlogin.QQLogin_Activity;
-import ldp.example.com.android_demo.studydemo.sendmessage.SendMessageActivity;
+import ldp.example.com.android_demo.studydemo.sendmessage.SendMessagePermissionActivity;
 import ldp.example.com.android_demo.studydemo.sqllitedemo.SqlActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.SharedPreferenceActivity;
 import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteActivity;
-import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteSDfileActivity;
-import ldp.example.com.android_demo.studydemo.xml_.XmlActivity;
+import ldp.example.com.android_demo.studydemo.wrisesdfile.WriteSDfilePermissionActivity;
+import ldp.example.com.android_demo.studydemo.xml_.XmlPermissionActivity;
 import ldp.example.com.android_demo.studydemo.zidingyikj.circleActivity;
 import ldp.example.com.android_demo.weather.activity.WeatherWelcomeActivity;
 
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void startContentProvider() {
         startActivity(new Intent(MainActivity.this,
-                ContentProviderActivity.class));
+                ContentProviderPermissionActivity.class));
     }
 
     private void startSQLite() {
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void startJson() {
         startActivity(new Intent(MainActivity.this,
-                JsonActivity.class));
+                JsonPermissionActivity.class));
     }
 
     private void start_sharedpreferences_Activity() {
@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void start_xml() {
         startActivity(new Intent(MainActivity.this,
-                XmlActivity.class));
+                XmlPermissionActivity.class));
     }
 
     private void start_txt() {
@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void start_cun_chu() {
         startActivity(new Intent(MainActivity.this,
-                WriteSDfileActivity.class));
+                WriteSDfilePermissionActivity.class));
     }
 
     private void start_login() {
@@ -221,13 +221,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void start_send_message() {
         Intent intent = new Intent(MainActivity.this,
-                SendMessageActivity.class);
+                SendMessagePermissionActivity.class);
         startActivity(intent);
     }
 
     private void start_call_phone() {
         Intent intent = new Intent(MainActivity.this,
-                CallphoneActivity.class);
+                CallphonePermissionActivity.class);
         intent.putExtra("tocallphone", "hello");
         startActivityForResult(intent, 100);
     }

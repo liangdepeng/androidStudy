@@ -7,9 +7,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ldp.base_lib.R;
+import com.example.ldp.base_lib.base.BaseActivity;
 
 
-public class AnimatorActivity extends AppCompatActivity implements View.OnClickListener {
+public class AnimatorActivity extends BaseActivity implements View.OnClickListener {
 
     private AnimatorView mAnimatorView;
 

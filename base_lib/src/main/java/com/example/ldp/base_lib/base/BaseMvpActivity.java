@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 /**
  * @author Da Peng
  */
-public abstract class MyBaseActivity extends AppCompatActivity implements MyBaseView {
+public abstract class BaseMvpActivity extends BaseActivity{
 
     private ProgressDialog mProgressDialog;
 

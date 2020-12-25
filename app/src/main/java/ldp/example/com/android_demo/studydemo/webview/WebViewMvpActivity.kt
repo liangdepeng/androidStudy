@@ -11,7 +11,7 @@ import android.webkit.*
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.ldp.base_lib.base.MyBaseActivity
+import com.example.ldp.base_lib.base.BaseMvpActivity
 import com.example.ldp.base_lib.utils.AppUtils
 import com.example.ldp.base_lib.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_web_view.*
@@ -20,7 +20,7 @@ import ldp.example.com.android_demo.R
 import kotlin.system.exitProcess
 
 
-class WebViewActivity : MyBaseActivity() {
+class WebViewMvpActivity : BaseMvpActivity() {
 
     lateinit var webView: WebView
     private var click_back_time: Long = 0
@@ -111,7 +111,7 @@ class WebViewActivity : MyBaseActivity() {
                 if (request != null && request.isForMainFrame) {
                     webView.loadUrl("https://www.baidu.com/")
                 }
-                Toast.makeText(this@WebViewActivity, "加载网页出错", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@WebViewMvpActivity, "加载网页出错", Toast.LENGTH_SHORT).show()
             }
 
             override fun onReceivedError(view: WebView?, errorCode: Int, description: String?, failingUrl: String?) {

@@ -6,14 +6,14 @@ import android.view.View
 import android.widget.SeekBar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.ldp.base_lib.base.MyBaseFragment
+import com.example.ldp.base_lib.base.BaseMvpFragment
 import kotlinx.android.synthetic.main.fragment_live_data_one.*
 import ldp.example.com.android_demo.R
 
 /**
  *  created by Da Peng at 2019/6/26
  */
-class LiveDataFragmentOne : MyBaseFragment() {
+class LiveDataMvpFragmentOne : BaseMvpFragment() {
 
     lateinit var mFragmentViewModel: FragmentViewModel
 

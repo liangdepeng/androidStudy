@@ -1,4 +1,4 @@
-package com.example.catchcrashlib;
+package com.example.ldp.base_lib.base;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -8,7 +8,7 @@ import java.util.Stack;
 
 public class AppManager {
 
-    private Stack<Activity> activityStack = new Stack<>();
+    private final Stack<Activity> activityStack = new Stack<>();
 
     private AppManager() {
     }
@@ -55,7 +55,7 @@ public class AppManager {
         }
     }
 
-    public void finishActivity(Class cls) {
+    public void finishActivity(Class<?> cls) {
         for (Activity activity : activityStack) {
             if (activity.getClass().equals(cls)) {
                 finishActivity(activity);
@@ -78,7 +78,7 @@ public class AppManager {
             if (activityManager != null) {
                 activityManager.killBackgroundProcesses(context.getPackageName());
             }
-            System.exit(0);
+            Runtime.getRuntime().exit(0);
         } catch (Exception e) {
             e.printStackTrace();
         }

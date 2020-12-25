@@ -18,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".studydemo.testcrash.TestCrashActivity"></activity>
         <activity android:name=".MainActivity">
 
             <!-- <intent-filter> -->
@@ -28,10 +29,10 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name=".studydemo.callphone.CallphoneActivity"
+            android:name=".studydemo.callphone.CallphonePermissionActivity"
             android:launchMode="singleTask" />
         <activity
-            android:name=".studydemo.sendmessage.SendMessageActivity"
+            android:name=".studydemo.sendmessage.SendMessagePermissionActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
@@ -43,32 +44,32 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".studydemo.utils.BaseActivity"
+            android:name="com.example.ldp.base_lib.base.BasePermissionActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".studydemo.wrisesdfile.WriteSDfileActivity"
+            android:name=".studydemo.wrisesdfile.WriteSDfilePermissionActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".studydemo.wrisesdfile.WriteActivity"
             android:launchMode="singleTask" />
         <activity
-            android:name=".studydemo.xml_.XmlActivity"
+            android:name=".studydemo.xml_.XmlPermissionActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity android:name=".studydemo.wrisesdfile.SharedPreferenceActivity" />
-        <activity android:name=".studydemo.json.JsonActivity" />
+        <activity android:name=".studydemo.json.JsonPermissionActivity" />
         <activity android:name=".studydemo.sqllitedemo.SqlActivity" />
-        <activity android:name=".studydemo.contentprovider.ContentProviderActivity" />
+        <activity android:name=".studydemo.contentprovider.ContentProviderPermissionActivity" />
         <activity
-            android:name=".studydemo.callphone.DialogActivity"
+            android:name=".studydemo.callphone.DialogMvpActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".studydemo.dialog.DialogsActivity" />
         <activity android:name=".studydemo.yibuxiaoxi.AsyncTaskActivity" />
-        <activity android:name=".studydemo.http.HttpActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden">
-        </activity>
+        <activity
+            android:name=".studydemo.http.HttpActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
         <activity android:name=".studydemo.kotlin.KotlinVideoPlayerActivity" />
         <activity android:name=".studydemo.kotlin.SystemVideoPlayerActivity" />
         <activity android:name=".studydemo.kotlin.KotlinCodeDemoActivity1" />
@@ -85,19 +86,17 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".weatherdemo.MyWeatherActivity" />
+        <activity android:name=".weatherdemo.WeatherMvpActivity" />
         <activity android:name=".livedata.LiveDataTestActivity" />
         <activity android:name=".livedata.FragmentTestActivity" />
-        <activity android:name=".studydemo.webview.WebViewActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"
+        <activity
+            android:name=".studydemo.webview.WebViewMvpActivity"
+            android:process=":webViewProcess"
             android:screenOrientation="portrait"
-            android:process=":webViewProcess">
-        </activity>
-        <activity android:name=".studydemo.pic.ImageCaptureActivity" />
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity android:name=".studydemo.pic.ImageCaptureMvpActivity" />
         <activity android:name=".studydemo.notification.NotificationActivity" />
-        <activity android:name=".studydemo.yibuxiaoxi.HandlerWelcomeActivity"
->
-        </activity>
+        <activity android:name=".studydemo.yibuxiaoxi.HandlerWelcomeActivity"></activity>
         <activity android:name=".service.TestServiceActivity" />
 
         <service
@@ -107,21 +106,21 @@
         <service android:name=".service.TestBindService" />
         <service android:name=".studydemo.yibuxiaoxi.MyIntentService" />
 
-        <activity android:name=".main.MainActivity2">
+        <activity android:name=".main.MainPermissionActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".studydemo.json.GsonParseActivity"></activity>
-        <activity android:name=".studydemo.webview.androidH5Activity"></activity>
-        <activity android:name=".studydemo.callphone.MainActivity23"/>
+        <activity android:name=".studydemo.json.GsonParseActivity" />
+        <activity android:name=".studydemo.webview.androidH5Activity" />
+        <activity android:name=".studydemo.callphone.MainActivity23" />
         <activity android:name=".studydemo.dialog.TestPopupDialogActivity" />
         <activity android:name=".studydemo.views.UIActivity" />
         <activity android:name=".studydemo.broadcast.BroadcastActivity" />
-        <activity android:name=".studydemo.yibuxiaoxi.HandlerThreadActivity" />
-        <activity android:name=".studydemo.yibuxiaoxi.MyIntentServiceActivity" />
+        <activity android:name=".studydemo.yibuxiaoxi.HandlerThreadPermissionActivity" />
+        <activity android:name=".studydemo.yibuxiaoxi.IntentServiceMvpActivity" />
     </application>
 
 </manifest>

@@ -19,7 +19,7 @@ import java.net.URL;
  */
 public class MyIntentService extends IntentService {
 
-    public static MyIntentServiceActivity.UpdateInfoListener listener;
+    public static IntentServiceMvpActivity.UpdateInfoListener listener;
 
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
@@ -67,7 +67,7 @@ public class MyIntentService extends IntentService {
         }
     }
 
-    public static void setListener(MyIntentServiceActivity.UpdateInfoListener listener1) {
+    public static void setListener(IntentServiceMvpActivity.UpdateInfoListener listener1) {
         listener = listener1;
     }
 }

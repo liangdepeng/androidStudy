@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".main.MainActivity2">
+    tools:context=".main.MainPermissionActivity2">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -9,14 +9,14 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ldp.base_lib.view.MyRecyclerViewViewHolder;
+import com.example.ldp.base_lib.view.BaseRecyclerViewHolder;
 
 import java.util.List;
 
 /**
  * created by Da Peng at 2019/8/1
  */
-public abstract class MultiLayoutAdapter<T> extends RecyclerView.Adapter<MyRecyclerViewViewHolder> {
+public abstract class MultiLayoutAdapter<T> extends RecyclerView.Adapter<BaseRecyclerViewHolder> {
 
     private List<T> datas;
     private Context mContext;
@@ -34,7 +34,7 @@ public abstract class MultiLayoutAdapter<T> extends RecyclerView.Adapter<MyRecyc
 
     @NonNull
     @Override
-    public MyRecyclerViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BaseRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (mMultiLayoutType != null) {
             layoutResId = viewType;
         }
@@ -43,15 +43,15 @@ public abstract class MultiLayoutAdapter<T> extends RecyclerView.Adapter<MyRecyc
             View view = new View(mContext);
             view.setVisibility(View.GONE);
             view.setLayoutParams(new FrameLayout.LayoutParams(0, 0));
-            return new MyRecyclerViewViewHolder(view);
+            return new BaseRecyclerViewHolder(view);
         }
 
         View itemView = LayoutInflater.from(mContext).inflate(layoutResId, parent, false);
-        return new MyRecyclerViewViewHolder(itemView);
+        return new BaseRecyclerViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyRecyclerViewViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull BaseRecyclerViewHolder holder, final int position) {
         onBindMyViewHolder(holder, datas.get(position), position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +72,7 @@ public abstract class MultiLayoutAdapter<T> extends RecyclerView.Adapter<MyRecyc
 
     protected abstract void onItemClick(View view, int position);
 
-    protected abstract void onBindMyViewHolder(MyRecyclerViewViewHolder holder, T item, int position);
+    protected abstract void onBindMyViewHolder(BaseRecyclerViewHolder holder, T item, int position);
 
     @Override
     public int getItemCount() {

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.ldp.base_lib.utils.LogUtils;
 import com.example.ldp.base_lib.view.BezierView;
 import com.example.ldp.base_lib.view.SameImagesView;
 
@@ -20,9 +21,9 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import ldp.example.com.android_demo.R;
-import ldp.example.com.android_demo.studydemo.utils.BaseActivity;
+import com.example.ldp.base_lib.base.BasePermissionActivity;
 
-public class CallphoneActivity extends BaseActivity {
+public class CallphonePermissionActivity extends BasePermissionActivity {
 
     @ViewInject(R.id.btn_call_phone)
     private Button callPhone;
@@ -47,7 +48,7 @@ public class CallphoneActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_callphone);
-        Log.d("activity", "onCreate()");
+        LogUtils.d("activity", "onCreate()");
         x.view().inject(this);
         //Intent_data();
         mImageView = new ImageView(this);
@@ -60,7 +61,7 @@ public class CallphoneActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(CallphoneActivity.this, CallphoneActivity.class));
+                startActivity(new Intent(CallphonePermissionActivity.this, CallphonePermissionActivity.class));
             }
         });
     }
@@ -81,7 +82,7 @@ public class CallphoneActivity extends BaseActivity {
         public void onClick(View v) {
             mPhoneNumber = number.getText().toString().trim();
             if ("".equals(mPhoneNumber)) {
-                Toast.makeText(CallphoneActivity.this, "电话号码不能为空", Toast.LENGTH_LONG).show();
+                Toast.makeText(CallphonePermissionActivity.this, "电话号码不能为空", Toast.LENGTH_LONG).show();
             } else {
                 /**
                  * 运行时权限
@@ -179,7 +180,7 @@ public class CallphoneActivity extends BaseActivity {
     private class MyDialogOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(CallphoneActivity.this, DialogActivity.class);
+            Intent intent = new Intent(CallphonePermissionActivity.this, DialogMvpActivity.class);
             startActivity(intent);
         }
     }
@@ -191,7 +192,7 @@ public class CallphoneActivity extends BaseActivity {
                 mSameImagesView.setImageRes(R.drawable.icon_number_of_buyers, 10, SameImagesView.VERTICAL);
             } else {
                 mSameImagesView.removeAllViews();
-                startActivity(new Intent(CallphoneActivity.this,MainActivity23.class));
+                startActivity(new Intent(CallphonePermissionActivity.this,MainActivity23.class));
             }
             show = !show;
         }

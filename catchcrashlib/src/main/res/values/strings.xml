@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">catchcrashlib</string>
+    <string name="app_crash_info">当你看到这个页面的时候，app已经出现了不可预料的异常，以下为异常信息：</string>
 </resources>

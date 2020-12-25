@@ -23,9 +23,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import ldp.example.com.android_demo.R;
-import ldp.example.com.android_demo.studydemo.utils.BaseActivity;
+import com.example.ldp.base_lib.base.BasePermissionActivity;
 
-public class XmlActivity extends BaseActivity {
+public class XmlPermissionActivity extends BasePermissionActivity {
 
     private Button mBtn_pull;
     private TextView mPull_txt;
@@ -91,7 +91,7 @@ public class XmlActivity extends BaseActivity {
 
         //判断是否为空
         if (TextUtils.isEmpty(s1) || TextUtils.isEmpty(s2) || TextUtils.isEmpty(s3)) {
-            Toast.makeText(XmlActivity.this, "输入内容不能为空", Toast.LENGTH_SHORT).show();
+            Toast.makeText(XmlPermissionActivity.this, "输入内容不能为空", Toast.LENGTH_SHORT).show();
         } else {
             //将字符串写入xml文档
             performCodeWithPermission("写文件", new PermissionCallback() {
@@ -139,7 +139,7 @@ public class XmlActivity extends BaseActivity {
             serializer.endTag(null, "info");
             serializer.endDocument();
 
-            Toast.makeText(XmlActivity.this, "xml文件已生成", Toast.LENGTH_SHORT).show();
+            Toast.makeText(XmlPermissionActivity.this, "xml文件已生成", Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

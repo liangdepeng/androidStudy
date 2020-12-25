@@ -21,14 +21,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import ldp.example.com.android_demo.R;
-import ldp.example.com.android_demo.studydemo.utils.BaseActivity;
+import com.example.ldp.base_lib.base.BasePermissionActivity;
 
 /**
  * 避免 多次创建 和 销毁线程 可以用 HandlerThread
  *
  * @author ldp
  */
-public class HandlerThreadActivity extends BaseActivity {
+public class HandlerThreadPermissionActivity extends BasePermissionActivity {
 
     private Handler mainHandler;
     private Handler workHandler;

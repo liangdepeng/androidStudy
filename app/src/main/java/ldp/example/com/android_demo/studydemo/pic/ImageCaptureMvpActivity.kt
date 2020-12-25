@@ -4,12 +4,12 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
-import com.example.ldp.base_lib.base.MyBaseActivity
+import com.example.ldp.base_lib.base.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_image_capture.*
 import ldp.example.com.android_demo.R
 import org.xutils.x
 
-class ImageCaptureActivity : MyBaseActivity() {
+class ImageCaptureMvpActivity : BaseMvpActivity() {
 
     private val Picture = 100
 

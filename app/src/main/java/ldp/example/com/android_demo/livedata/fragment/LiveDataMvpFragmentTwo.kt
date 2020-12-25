@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.ldp.base_lib.base.MyBaseFragment
+import com.example.ldp.base_lib.base.BaseMvpFragment
 import kotlinx.android.synthetic.main.fragment_livedata_two.*
 import ldp.example.com.android_demo.R
 
 /**
  *  created by Da Peng at 2019/6/26
  */
-class LiveDataFragmentTwo :MyBaseFragment() {
+class LiveDataMvpFragmentTwo : BaseMvpFragment() {
 
     lateinit var mFragmentViewModel:FragmentViewModel
 

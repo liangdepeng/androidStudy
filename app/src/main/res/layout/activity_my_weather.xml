@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".weatherdemo.MyWeatherActivity">
+    tools:context=".weatherdemo.WeatherMvpActivity">
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayout"
@@ -34,7 +34,7 @@
         </LinearLayout>
 
         <fragment
-            android:name="ldp.example.com.android_demo.weatherdemo.CityFragment"
+            android:name="ldp.example.com.android_demo.weatherdemo.CityMvpFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
