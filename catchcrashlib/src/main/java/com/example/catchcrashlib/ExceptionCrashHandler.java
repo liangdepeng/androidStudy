@@ -18,13 +18,14 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class ExceptionCrashHandler implements Thread.UncaughtExceptionHandler {
 
     private Context appContext;
-    private HashMap<String, String> crashInfoMap = new HashMap<>();
-    private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+    private final HashMap<String, String> crashInfoMap = new HashMap<>();
+    private final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
 
     private ExceptionCrashHandler() {
 

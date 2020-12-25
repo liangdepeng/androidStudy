@@ -116,10 +116,10 @@ public enum ClassEnum {
     TEST_CRASH_INFO("crash_Test",TestCrashActivity.class,false);
 
     private String info;
-    private Class clazz;
+    private Class<?> clazz;
     private boolean defaultStart;
 
-    private ClassEnum(String info, Class clazz, boolean defaultStart) {
+    private ClassEnum(String info, Class<?> clazz, boolean defaultStart) {
         this.info = info;
         this.clazz = clazz;
         this.defaultStart = defaultStart;
@@ -133,11 +133,11 @@ public enum ClassEnum {
         this.info = info;
     }
 
-    public Class getClazz() {
+    public Class<?> getClazz() {
         return clazz;
     }
 
-    public void setClazz(Class clazz) {
+    public void setClazz(Class<?> clazz) {
         this.clazz = clazz;
     }
 
