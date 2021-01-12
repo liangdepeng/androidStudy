@@ -19,6 +19,7 @@ public class TestCrashActivity extends AppCompatActivity implements View.OnClick
     private void initView() {
         findViewById(R.id.null_ex_btn).setOnClickListener(this);
         findViewById(R.id.out_index_ex_btn).setOnClickListener(this);
+        findViewById(R.id.number_format_ex_btn).setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +32,8 @@ public class TestCrashActivity extends AppCompatActivity implements View.OnClick
         } else if (id == R.id.out_index_ex_btn) {
             char[] chars = "12345".toCharArray();
             char aChar = chars[10];
+        }else if (id == R.id.number_format_ex_btn){
+            throw new NumberFormatException("数据格式化异常");
         }
     }
 }

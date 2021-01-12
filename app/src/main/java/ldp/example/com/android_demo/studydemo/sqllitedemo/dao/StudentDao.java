@@ -49,6 +49,7 @@ public class StudentDao {
     public void SQLite_update(String name, String id) {
         SQLiteDatabase db = mSqlite1.getWritableDatabase();
         db.execSQL("update student set id = ? where name = ?", new Object[]{id, name});
+        db.close();
     }
 
     /**

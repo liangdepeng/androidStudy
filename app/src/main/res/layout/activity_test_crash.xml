@@ -27,6 +27,15 @@
             android:text="@string/index_out_of_bounds_exception"
             android:textAllCaps="false" />
 
+
+        <Button
+            android:id="@+id/number_format_ex_btn"
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/index_out_of_bounds_exception"
+            android:textAllCaps="false" />
+
     </LinearLayout>
 
 </ScrollView>

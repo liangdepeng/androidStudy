@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * 崩溃提示 Activity
+ */
 public class TipActivity extends AppCompatActivity {
 
     @Override

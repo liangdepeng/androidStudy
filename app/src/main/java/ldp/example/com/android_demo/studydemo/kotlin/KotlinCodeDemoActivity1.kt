@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ldp.base_lib.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_kotlin_code_demo1.*
 import ldp.example.com.android_demo.R
 import java.util.*
@@ -23,6 +24,7 @@ class KotlinCodeDemoActivity1 : AppCompatActivity() {
     val args: Array<Int> = arrayOf(1, 2, 3)
     val arrayOfNulls = arrayOfNulls<Int>(10) //空数组
     val initArray = Array(5, { i -> (i * i).toString() }) //构造函数init
+    val instance by lazy { this }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +72,7 @@ class KotlinCodeDemoActivity1 : AppCompatActivity() {
 
     class DemoManager2 {
 
-        constructor(){
+        constructor() {
             //构造函数
             MyObject.a()
         }
@@ -181,9 +183,9 @@ class KotlinCodeDemoActivity1 : AppCompatActivity() {
         for ((index, value) in array.withIndex()) {
             println("the element at $index is $value")
         }
-        val a =1
+        val a = 1
         val b = 10
-        if (a in 2..10){
+        if (a in 2..10) {
             println(true)
         }
     }
@@ -239,8 +241,35 @@ class KotlinCodeDemoActivity1 : AppCompatActivity() {
     //允许通过主构造函数覆盖次构造函数
     class Man(name: String) : Human(name)
 
+    val tag = KotlinCodeDemoActivity1::class.java.simpleName
+
     fun showToast(s: String) {
-        Toast.makeText(this@KotlinCodeDemoActivity1, s, Toast.LENGTH_SHORT).show()
+
+        myLoop@ for (i in 1..100 step 3) {
+            var b = i and 1 == 1 //与运算 是否是奇数 odd number
+
+
+            var aa = 1
+            var bb = 2
+
+            aa = aa + bb // 加减运算 交换2个数的值
+            bb = aa - bb
+            aa = aa - bb
+
+            LogUtils.e(tag, "加减交换 aa = $aa  bb = $bb")
+
+            aa = 3
+            bb = 4
+
+            aa = aa xor bb // 异或运算 交换2个数的值
+            bb = aa xor bb
+            aa = aa xor bb
+
+            LogUtils.e(tag, "位运算 aa = $aa  bb = $bb")
+        }
+
+
+        Toast.makeText(instance, s, Toast.LENGTH_SHORT).show()
     }
 
 }

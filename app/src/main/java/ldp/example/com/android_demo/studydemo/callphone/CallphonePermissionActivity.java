@@ -181,8 +181,8 @@ public class CallphonePermissionActivity extends BasePermissionActivity {
     private class MyDialogOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(CallphonePermissionActivity.this, DialogMvpActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(CallphonePermissionActivity.this, DialogMvpActivity.class);
+//            startActivity(intent);
         }
     }
 
